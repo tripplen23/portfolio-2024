@@ -2,15 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Logo from "./Logo";
 import { useRouter } from "next/router";
-import {
-  TwitterIcon,
-  GithubIcon,
-  LinkedInIcon,
-  PinterestIcon,
-  DribbbleIcon,
-  SunIcon,
-  MoonIcon,
-} from "./Icons";
+import { GithubIcon, LinkedInIcon, SunIcon, MoonIcon } from "./Icons";
 import { motion } from "framer-motion";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
 
@@ -40,22 +32,12 @@ const Navbar = () => {
         <CustomLink href="/" title="Home" className="mr-4" />
         <CustomLink href="/about" title="About" className="mx-4" />
         <CustomLink href="/project" title="Project" className="mx-4" />
-        <CustomLink href="/articles" title="Articles" className="ml-4" />
       </nav>
 
       {/* SOCIAL */}
       <nav className="flex items-center justify-center flex-wrap">
         <motion.a
-          href="https://twitter.com"
-          target={"_blank"}
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.9 }}
-          className="w-6 mx-3"
-        >
-          <TwitterIcon />
-        </motion.a>
-        <motion.a
-          href="https://twitter.com"
+          href="https://github.com/tripplen23"
           target={"_blank"}
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
@@ -64,31 +46,13 @@ const Navbar = () => {
           <GithubIcon />
         </motion.a>
         <motion.a
-          href="https://twitter.com"
+          href="https://www.linkedin.com/in/duc-binh-nguyen-3b4839168/"
           target={"_blank"}
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
           className="w-6 mx-3"
         >
           <LinkedInIcon />
-        </motion.a>
-        <motion.a
-          href="https://twitter.com"
-          target={"_blank"}
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.9 }}
-          className="w-6 mx-3"
-        >
-          <PinterestIcon />
-        </motion.a>
-        <motion.a
-          href="https://twitter.com"
-          target={"_blank"}
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.9 }}
-          className="w-6 mx-3"
-        >
-          <DribbbleIcon />
         </motion.a>
 
         <button

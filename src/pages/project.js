@@ -5,10 +5,36 @@ import Layout from "@/components/Layout";
 import Link from "next/link";
 import Image from "next/image";
 import { GithubIcon } from "@/components/Icons";
-import project1 from "../../public/images/projects/crypto-screener-cover-image.jpg";
+import ecommerceBackEnd2024 from "../../public/images/projects/ecommerceBackEnd2024.png";
+import ecommerceFrontEnd2024 from "../../public/images/projects/ecommerceFrontEnd2024.png";
+import mahalo2022 from "../../public/images/projects/mahalo2022.png";
+import thesis2024 from "../../public/images/projects/thesis2024.png";
+import portfolio2022 from "../../public/images/projects/portfolio2022.png";
+import portfolio2024 from "../../public/images/projects/portfolio2024.png";
 
-const linkProject1 = "https://fs17-frontend-project-zln9-kl59btf0o.vercel.app/";
-const githubProject1 = "https://github.com/tripplen23/fs17_CSharp_FullStack";
+// Backend Ecommerce
+const linkProject1 = "https://sync-ecommerce.azurewebsites.net/index.html";
+const githubProject1 = "https://github.com/tripplen23/synchronize-server";
+
+// Frontend Ecommerce
+const linkProject2 = "https://fs17-frontend-project-zln9-kl59btf0o.vercel.app/";
+const githubProject2 = "https://github.com/tripplen23/synchronize-client";
+
+// Mahalo
+const linkProject3 = "https://mahalo-restaurant.vercel.app/";
+const githubProject3 = "https://github.com/tripplen23/mahaloRestaurant";
+
+// Thesis 2024
+const linkProject4 = "https://www.theseus.fi/handle/10024/854589";
+const githubProject4 = "https://github.com/tripplen23/thesis";
+
+// Portfolio 2022
+const linkProject5 = "https://github.com/tripplen23/portfolio-2022";
+const githubProject5 = "https://github.com/tripplen23/portfolio-2022";
+
+// Portfolio 2024
+const linkProject6 = "https://github.com/tripplen23/portfolio-2024";
+const githubProject6 = "https://github.com/tripplen23/portfolio-2024";
 
 const FeaturedProject = ({ type, title, summary, img, link, github }) => {
   return (
@@ -47,15 +73,6 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
       </div>
     </article>
   );
-};
-
-FeaturedProject.defaultProps = {
-  type: "Project Type",
-  title: "Project Title",
-  summary: "Project Summary",
-  img: project1,
-  link: "/",
-  github: "/",
 };
 
 const Project = ({ type, title, img, link, github }) => {
@@ -113,10 +130,10 @@ const ProjectPage = () => {
           <div className="grid grid-cols-12 gap-24 gap-y-32">
             <div className="col-span-12">
               <FeaturedProject
-                type="Fullstack Web Development"
-                title="Synchronize ecommerce webshop"
-                summary="A project built during my time at Integrify Academy. It was a great experience learning how to build a fullstack webshop from scratch using React, TypeScript, .NET, ASP, and PostgreSQL."
-                img={project1}
+                type="Ecommerce Back End"
+                title="Synchronize ecommerce webshop Server"
+                summary="A project built during my time at Integrify Academy. It was a great experience learning how to build a back end webshop using C#, .NET, ASP, and PostgreSQL. The project was offered me a chance to work with the other developers that enhance me a lot of skills in communication in the Tech World."
+                img={ecommerceBackEnd2024}
                 link={linkProject1}
                 github={githubProject1}
               />
@@ -125,46 +142,46 @@ const ProjectPage = () => {
               <Project
                 type="Fullstack Web Development"
                 title="Synchronize ecommerce webshop"
-                img={project1}
-                link={linkProject1}
-                github={githubProject1}
+                img={ecommerceFrontEnd2024}
+                link={linkProject2}
+                github={githubProject2}
               />
             </div>
             <div className="col-span-6">
               <Project
-                type="Fullstack Web Development"
-                title="Synchronize ecommerce webshop"
-                img={project1}
-                link={linkProject1}
-                github={githubProject1}
+                type="UI Web Development"
+                title="Mahalo Webshop 2022"
+                img={mahalo2022}
+                link={linkProject3}
+                github={githubProject3}
               />
             </div>
             <div className="col-span-12">
               <FeaturedProject
-                type="Fullstack Web Development"
-                title="Synchronize ecommerce webshop"
-                summary="A project built during my time at Integrify Academy. It was a great experience learning how to build a fullstack webshop from scratch using React, TypeScript, .NET, ASP, and PostgreSQL."
-                img={project1}
-                link={linkProject1}
-                github={githubProject1}
+                type="Thesis"
+                title="Researching and AI Testing Strategirs for Video Management System. "
+                summary="The thesis that I was working on during my time at Vaasa University of Applied Sciences in 2024. The project was a great experience for me to practice critical thinking, the way to approach a problem, and how to solve it."
+                img={thesis2024}
+                link={linkProject4}
+                github={githubProject4}
               />
             </div>
             <div className="col-span-6">
               <Project
-                type="Fullstack Web Development"
-                title="Synchronize ecommerce webshop"
-                img={project1}
-                link={linkProject1}
-                github={githubProject1}
+                type="Web Development"
+                title="Portfolio 2022"
+                img={portfolio2022}
+                link={linkProject5}
+                github={githubProject5}
               />
             </div>
             <div className="col-span-6">
               <Project
-                type="Fullstack Web Development"
-                title="Synchronize ecommerce webshop"
-                img={project1}
-                link={linkProject1}
-                github={githubProject1}
+                type="Web Development"
+                title="Portfolio 2024"
+                img={portfolio2024}
+                link={linkProject6}
+                github={githubProject6}
               />
             </div>
           </div>
