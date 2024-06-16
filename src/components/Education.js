@@ -64,7 +64,7 @@ const Education = () => {
             type="Full Stack Bootcamp"
             time="Spring 2024"
             place="Integrify Academy"
-            info="5 months at Integrify Academy was a turning point in my career. I learned the latest web development technologies and tools in TypeScript and C#, and I was able to apply them to real-world projects. I am grateful for the experience and the people I met during my time there."
+            info="6 months at Integrify Academy was a turning point in my career. I learned the latest web development technologies and tools in TypeScript and C#, and I was able to apply them to real-world projects. I am grateful for the experience and the people I met during my time there."
           />
         </ul>
       </div>

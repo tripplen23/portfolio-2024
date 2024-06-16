@@ -4,9 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
-import article1 from "../../public/images/articles/pagination component in reactjs.jpg";
-import article2 from "../../public/images/articles/create loading screen in react js.jpg";
-import article3 from "../../public/images/articles/create modal component in react using react portals.png";
+import coursera_aiForEveryone from "../../public/images/certificates/coursera_aiForEveryone.png";
+import f8_jsBasic from "../../public/images/certificates/f8_jsBasic.png";
+import itd_intern from "../../public/images/certificates/itd_intern.png";
+import ofh_cicd from "../../public/images/certificates/ofh_cicd.png";
+import ofh_fullstackWebDevelopment from "../../public/images/certificates/ofh_fullstackWebDevelopment.png";
+import ofh_graphql from "../../public/images/certificates/ofh_graphql.png";
+import ofh_reactNative from "../../public/images/certificates/ofh_reactNative.png";
+import ofh_typescript from "../../public/images/certificates/ofh_typescript.png";
+import vamk_diploma from "../../public/images/certificates/vamk_diploma.png";
+
 import { motion, useMotionValue } from "framer-motion";
 
 const FramerImage = motion(Image);
@@ -65,7 +72,7 @@ const Certificate = ({ img, title, date, link }) => {
   );
 };
 
-const FeaturedCertificate = ({ img, title, time, summary, link }) => {
+const FeaturedCertificate = ({ img, title, description, link }) => {
   return (
     <li className="relative col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl">
       <div className="absolute top-0 -right-3 -z-10 w-[100.5%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl" />
@@ -87,8 +94,7 @@ const FeaturedCertificate = ({ img, title, time, summary, link }) => {
           {title}
         </h2>
       </Link>
-      <p className="text-sm mb-2">{summary}</p>
-      <span className="text-primary font-semibold">{time}</span>
+      <p className="text-sm mb-2">{description}</p>
     </li>
   );
 };
@@ -105,20 +111,22 @@ const certificate = () => {
           <AnimatedText text="Words Can Change The World! " className="mb-16" />
           <ul className="grid grid-cols-2 gap-16">
             <FeaturedCertificate
-              title="Build A Custom Pagination Component In Reactjs From Scratch"
-              summary="Learn how to build a custom pagination component in ReactJS from scratch. 
-            Follow this step-by-step guide to integrate Pagination component in your ReactJS project."
-              time="9 min read"
-              link="https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-reactjs-from-scratch/"
-              img={article1}
+              title="Degree Certificate of Vaasa University of Applied Sciences"
+              description="Graduated from Vaasa University of Applied Sciences. Major in Information Technology."
+              link="/Diploma2001352.pdf"
+              img={vamk_diploma}
             />
             <FeaturedCertificate
-              title="Build A Custom Pagination Component In Reactjs From Scratch"
-              summary="Learn how to build a custom pagination component in ReactJS from scratch. 
-            Follow this step-by-step guide to integrate Pagination component in your ReactJS project."
-              time="9 min read"
-              link="https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-reactjs-from-scratch/"
-              img={article2}
+              title="ITD Intern Assessment result 2023"
+              description="Assessment form for 6 months practical training at ITD group Vietnam."
+              link="/InternAssessmentResult.pdf"
+              img={itd_intern}
+            />
+            <FeaturedCertificate
+              title="Integrify Certificate of Completion"
+              description="Learn how to build fullstack web applications using React and .NET, have a chance to work with PostgreSQL, Azure Cloud, and CI/CD concepts."
+              link="/"
+              img={vamk_diploma}
             />
           </ul>
           <h2 className="font-bold text-4xl w-full text-center my-16 mt-32">
@@ -126,34 +134,46 @@ const certificate = () => {
           </h2>
           <ul>
             <Certificate
-              title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-              date="March 23, 2024"
-              link="/"
-              img={article3}
+              title="Basic Javascript"
+              date="Novemver, 2022"
+              link="https://fullstack.edu.vn/cert/f35hj"
+              img={f8_jsBasic}
             />
             <Certificate
-              title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-              date="March 23, 2024"
-              link="/"
-              img={article3}
+              title="Fullstack Open Helsinki - Fullstack Web Development"
+              date="August, 2023"
+              link="https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/3539f151c3f192e5a06759db2c2100be"
+              img={ofh_fullstackWebDevelopment}
             />
             <Certificate
-              title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-              date="March 23, 2024"
-              link="/"
-              img={article3}
+              title="AI For Everyone"
+              date="August, 2023"
+              link="https://coursera.org/share/622f0ff3f048de049872d2a2a1e8737b"
+              img={coursera_aiForEveryone}
             />
             <Certificate
-              title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-              date="March 23, 2024"
-              link="/"
-              img={article3}
+              title="Fullstack Open Helsinki - React Native"
+              date="October, 2023"
+              link="https://studies.cs.helsinki.fi/stats/api/certificate/fs-react-native-2020/en/e32ab972bfd4d501979829dc72aeee76"
+              img={ofh_reactNative}
             />
             <Certificate
-              title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-              date="March 23, 2024"
-              link="/"
-              img={article3}
+              title="Fullstack Open Helsinki - GraphQL"
+              date="October, 2023"
+              link="https://studies.cs.helsinki.fi/stats/api/certificate/fs-graphql/en/319f2ac6fe6eaaa616f0aab5078d1bf1"
+              img={ofh_graphql}
+            />
+            <Certificate
+              title="Fullstack Open Helsinki - TypeScript"
+              date="November, 2023"
+              link="https://studies.cs.helsinki.fi/stats/api/certificate/fs-typescript/en/023f6d7d04aab56aea4a58ba88de01b9"
+              img={ofh_typescript}
+            />
+            <Certificate
+              title="Fullstack Open Helsinki - CI/CD"
+              date="January, 2024"
+              link="https://studies.cs.helsinki.fi/stats/api/certificate/fs-cicd/en/5de71736172166a530e1fe9a3fb1bebe"
+              img={ofh_cicd}
             />
           </ul>
         </Layout>
