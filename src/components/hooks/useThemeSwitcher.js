@@ -1,48 +1,39 @@
 import React, { useState, useEffect } from "react";
 
 const useThemeSwitcher = () => {
-  const preferDarkQuery = "(prefer-color-scheme: dark)";
-  const [mode, setMode] = useState("");
+  const preferDarkQuery = "(prefers-color-scheme: dark)";
+  const [mode, setMode] = useState("light");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(preferDarkQuery);
     const userPref = window.localStorage.getItem("theme");
 
     const handleChange = () => {
-      if (userPref) {
-        let check = userPref === "dark" ? "dark" : "light";
-        setMode(check);
-        if (check === dark) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-      } else {
-        let check = mediaQuery.matches ? "dark" : "light";
-        setMode(check);
-        if (check === dark) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-      }
+      const check = userPref
+        ? userPref === "dark"
+          ? "dark"
+          : "light"
+        : mediaQuery.matches
+        ? "dark"
+        : "light";
+      setMode(check);
+      document.documentElement.classList.toggle("dark", check === "dark");
     };
 
-    mediaQuery.addEventListener("change", handleChange);
+    handleChange();
+    setMounted(true); // Mark that the component has mounted
 
+    mediaQuery.addEventListener("change", handleChange);
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
-  // TODO: Update value in local storage
   useEffect(() => {
-    if (mode === "dark") {
-      window.localStorage.setItem("theme", "dark");
-      document.documentElement.classList.add("dark");
-    } else {
-      window.localStorage.setItem("theme", "light");
-      document.documentElement.classList.add("light");
+    if (mounted) {
+      window.localStorage.setItem("theme", mode);
+      document.documentElement.classList.toggle("dark", mode === "dark");
     }
-  }, [mode]);
+  }, [mode, mounted]);
 
   return [mode, setMode];
 };
