@@ -34,14 +34,14 @@ const CustomMobileLink = ({ href, title, className = "", toggle }) => {
   return (
     <button
       href={href}
-      className={`${className} relative group`}
+      className={`${className} relative group text-light dark:text-dark my-2`}
       onClick={handleClick}
     >
       {title}
       <span
-        className={`h-[1px] inline-block bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${
+        className={`h-[1px] inline-block bg-light absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${
           router.asPath === href ? "w-full" : "w-0"
-        } dark:bg-light`}
+        } dark:bg-dark`}
       >
         &nbsp;
       </span>
@@ -58,7 +58,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-full px-32 py-8 font-medium flex item-center justify-between dark:text-light relative">
+    <header className="w-full px-32 py-8 font-medium flex item-center justify-between dark:text-light relative z-10 lg:px-16 md:px-12 sm:px-8">
       <button
         className="flex-col justify-center items-center hidden lg:flex "
         onClick={handleClick}
@@ -132,43 +132,47 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen ? (
-        <div className="min-w-[70vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32">
+        <motion.div
+          initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
+          animate={{ scale: 1, opacity: 1 }}
+          className="min-w-[70vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32"
+        >
           {/* PAGES */}
           <nav className="flex items-center flex-col justify-center">
             <CustomMobileLink
               href="/"
               title="Home"
-              className="mr-4"
+              className=""
               toggle={handleClick}
             />
             <CustomMobileLink
               href="/about"
               title="About"
-              className="mx-4"
+              className=""
               toggle={handleClick}
             />
             <CustomMobileLink
               href="/project"
               title="Project"
-              className="mx-4"
+              className=""
               toggle={handleClick}
             />
             <CustomMobileLink
               href="/certificate"
               title="Certificate"
-              className="ml-4"
+              className=""
               toggle={handleClick}
             />
           </nav>
 
           {/* SOCIAL */}
-          <nav className="flex items-center justify-center flex-wrap">
+          <nav className="flex items-center justify-center flex-wrap mt-2">
             <motion.a
               href="https://github.com/tripplen23"
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className="w-6 mx-3"
+              className="w-6 mx-3 sm:mx-1 bg-light rounded-full dark:bg-dark"
             >
               <GithubIcon />
             </motion.a>
@@ -177,7 +181,7 @@ const Navbar = () => {
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className="w-6 mx-3"
+              className="w-6 mx-3 sm:mx-1"
             >
               <LinkedInIcon />
             </motion.a>
@@ -197,7 +201,7 @@ const Navbar = () => {
               )}
             </button>
           </nav>
-        </div>
+        </motion.div>
       ) : null}
 
       {/* LOGO */}
