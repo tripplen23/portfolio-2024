@@ -5,7 +5,7 @@ import Image from "next/image";
 import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import TransitionEffect from "@/components/TransitionEffect";
-import coursera_aiForEveryone from "@/images/certificates/coursera_aiForEveryone.png";
+import coursera_aiForEveryone from "@/images/certificates/coursera_aiForEveryOne.png";
 import f8_jsBasic from "@/images/certificates/f8_jsBasic.png";
 import itd_intern from "@/images/certificates/itd_intern.png";
 import ofh_cicd from "@/images/certificates/ofh_cicd.png";
