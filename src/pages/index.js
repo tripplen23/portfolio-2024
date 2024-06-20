@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Head from "next/head";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
