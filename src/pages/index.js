@@ -1,16 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 import Head from "next/head";
 import Layout from "@/components/Layout";
-import { motion } from "framer-motion";
 import GoToTopComponent from "@/components/GoToTopComponent";
 import TransitionEffect from "@/components/TransitionEffect";
 import Image from "next/image";
-import profilePic from "public/images/profile/binhnguyenanime.png";
+import profilePic from "../images/profile/binhnguyenanime.png";
 import AnimatedText from "@/components/AnimatedText";
 import HireMe from "@/components/HireMe";
 import Link from "next/link";
-import { LinkArrow } from "@/components/Icons";
-import lightBulb from "public/images/svgs/miscellaneous_icons_1.svg";
+import lightBulb from "../images/svgs/miscellaneous_icons_1.svg";
 
 export default function Home() {
   return (

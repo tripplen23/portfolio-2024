@@ -8,12 +8,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { GithubIcon } from "@/components/Icons";
 import { motion } from "framer-motion";
-import ecommerceBackEnd2024 from "public/images/projects/ecommerceBackEnd2024.png";
-import ecommerceFrontEnd2024 from "public/images/projects/ecommerceFrontEnd2024.png";
-import mahalo2022 from "public/images/projects/mahalo2022.png";
-import thesis2024 from "public/images/projects/thesis2024.png";
-import portfolio2022 from "public/images/projects/portfolio2022.png";
-import portfolio2024 from "public/images/projects/portfolio2024.png";
+import ecommerceBackEnd2024 from "../images/projects/ecommerceBackEnd2024.png";
+import ecommerceFrontEnd2024 from "../images/projects/ecommerceFrontEnd2024.png";
+import mahalo2022 from "../images/projects/mahalo2022.png";
+import thesis2024 from "../images/projects/thesis2024.png";
+import portfolio2022 from "../images/projects/portfolio2022.png";
+import portfolio2024 from "../images/projects/portfolio2024.png";
 
 // Backend Ecommerce
 const linkProject1 = "https://sync-ecommerce.azurewebsites.net/index.html";
