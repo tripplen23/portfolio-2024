@@ -4,11 +4,11 @@ import Layout from "@/components/Layout";
 import GoToTopComponent from "@/components/GoToTopComponent";
 import TransitionEffect from "@/components/TransitionEffect";
 import Image from "next/image";
-import profilePic from "../images/profile/binhnguyenanime.png";
+import profilePic from "@/images/profile/binhnguyenanime.png";
 import AnimatedText from "@/components/AnimatedText";
 import HireMe from "@/components/HireMe";
 import Link from "next/link";
-import lightBulb from "../images/svgs/miscellaneous_icons_1.svg";
+import lightBulb from "@/images/svgs/miscellaneous_icons_1.svg";
 
 export default function Home() {
   return (

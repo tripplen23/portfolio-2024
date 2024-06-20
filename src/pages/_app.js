@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import { Orbitron } from "next/font/google";
 import Head from "next/head";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
