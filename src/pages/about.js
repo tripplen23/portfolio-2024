@@ -5,10 +5,11 @@ import AnimatedText from "@/components/AnimatedText";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
+import TransitionEffect from "@/components/TransitionEffect";
+import GoToTopComponent from "@/components/GoToTopComponent";
 import Layout from "@/components/Layout";
 import profilPic from "../../public/images/profile/binhfnef2.jpg";
 import { useMotionValue, useInView, useSpring } from "framer-motion";
-import TransitionEffect from "@/components/TransitionEffect";
 
 const AnimatedNumbers = ({ value }) => {
   const ref = useRef(null);
@@ -46,7 +47,7 @@ const about = () => {
       <main className="flex w-full flex-col items-center justify-center dark:text-light">
         <Layout className="pt-16">
           <AnimatedText
-            text="Passion Fuels Purpose! "
+            text="Start from the passion"
             className="mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
           />
           <div className="grid w-full grid-cols-8 gap-16 sm:gap-8">
@@ -129,6 +130,7 @@ const about = () => {
           <Skills />
           <Experience />
           <Education />
+          <GoToTopComponent />
         </Layout>
       </main>
     </>

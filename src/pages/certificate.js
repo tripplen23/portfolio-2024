@@ -14,6 +14,7 @@ import ofh_graphql from "../../public/images/certificates/ofh_graphql.png";
 import ofh_reactNative from "../../public/images/certificates/ofh_reactNative.png";
 import ofh_typescript from "../../public/images/certificates/ofh_typescript.png";
 import vamk_diploma from "../../public/images/certificates/vamk_diploma.png";
+import GoToTopComponent from "@/components/GoToTopComponent";
 
 import { motion, useMotionValue } from "framer-motion";
 
@@ -131,19 +132,21 @@ const certificate = () => {
               link="/InternAssessmentResult.pdf"
               img={itd_intern}
             />
+            {/*
             <FeaturedCertificate
               title="Integrify Certificate of Completion"
               description="Learn how to build fullstack web applications using React and .NET, have a chance to work with PostgreSQL, Azure Cloud, and CI/CD concepts."
               link="/"
               img={vamk_diploma}
             />
+            */}
           </ul>
           <h2 className="font-bold text-4xl w-full text-center my-16 mt-32">
             All Certificates
           </h2>
           <ul>
             <Certificate
-              title="F8 -Basic Javascript"
+              title="F8 - Basic Javascript"
               date="Novemver, 2022"
               link="https://fullstack.edu.vn/cert/f35hj"
               img={f8_jsBasic}
@@ -185,6 +188,7 @@ const certificate = () => {
               img={ofh_cicd}
             />
           </ul>
+          <GoToTopComponent />
         </Layout>
       </main>
     </>
