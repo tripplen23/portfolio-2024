@@ -9,7 +9,7 @@ import Education from "@/components/Education";
 import TransitionEffect from "@/components/TransitionEffect";
 import GoToTopComponent from "@/components/GoToTopComponent";
 import Layout from "@/components/Layout";
-import profilPic from "../../public/images/profile/binhfnef2.jpg";
+import profilPic from "public/images/profile/binhfnef2.jpg";
 import { useMotionValue, useInView, useSpring } from "framer-motion";
 
 const AnimatedNumbers = ({ value }) => {
