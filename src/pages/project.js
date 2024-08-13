@@ -14,6 +14,7 @@ import mahalo2022 from "@/images/projects/mahalo2022.png";
 import thesis2024 from "@/images/projects/thesis2024.png";
 import portfolio2022 from "@/images/projects/portfolio2022.png";
 import portfolio2024 from "@/images/projects/portfolio2024.png";
+import azeventmanagement from "@/images/projects/azeventmanagement.png";
 
 // Backend Ecommerce
 const linkProject1 = "https://sync-ecommerce.azurewebsites.net/index.html";
@@ -38,6 +39,10 @@ const githubProject5 = "https://github.com/tripplen23/portfolio-2022";
 // Portfolio 2024
 const linkProject6 = "/";
 const githubProject6 = "https://github.com/tripplen23/portfolio-2024";
+
+// Az Event Management 2024
+const linkProject7 = "https://github.com/tripplen23/az-eventmanagement";
+const githubProject7 = "https://github.com/tripplen23/az-eventmanagement";
 
 const FramerImage = motion(Image);
 
@@ -212,6 +217,16 @@ const ProjectPage = () => {
                 img={portfolio2024}
                 link={linkProject6}
                 github={githubProject6}
+              />
+            </div>
+            <div className="col-span-12">
+              <FeaturedProject
+                type="Event Management System API"
+                title="A hands on project to practice Azure Cloud Services"
+                summary="The Event Management System is a web application built with ASP.NET Core, Entity Framework Core, and PostgreSQL. It uses ASP.NET Core Identity for user authentication and authorization, and integrates with Azure services for storage and monitoring."
+                img={azeventmanagement}
+                link={linkProject7}
+                github={githubProject7}
               />
             </div>
           </div>
