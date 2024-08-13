@@ -14,6 +14,7 @@ import ofh_graphql from "@/images/certificates/ofh_graphql.png";
 import ofh_reactNative from "@/images/certificates/ofh_reactNative.png";
 import ofh_typescript from "@/images/certificates/ofh_typescript.png";
 import vamk_diploma from "@/images/certificates/vamk_diploma.png";
+import integrify_cert from "@/images/certificates/integrify_cert.png";
 import GoToTopComponent from "@/components/GoToTopComponent";
 
 import { motion, useMotionValue } from "framer-motion";
@@ -132,14 +133,13 @@ const certificate = () => {
               link="/InternAssessmentResult.pdf"
               img={itd_intern}
             />
-            {/*
+
             <FeaturedCertificate
               title="Integrify Certificate of Completion"
               description="Learn how to build fullstack web applications using React and .NET, have a chance to work with PostgreSQL, Azure Cloud, and CI/CD concepts."
-              link="/"
-              img={vamk_diploma}
+              link="/integrifycert.pdf"
+              img={integrify_cert}
             />
-            */}
           </ul>
           <h2 className="font-bold text-4xl w-full text-center my-16 mt-32">
             All Certificates
