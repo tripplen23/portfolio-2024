@@ -15,6 +15,7 @@ import ofh_reactNative from "@/images/certificates/ofh_reactNative.png";
 import ofh_typescript from "@/images/certificates/ofh_typescript.png";
 import vamk_diploma from "@/images/certificates/vamk_diploma.png";
 import integrify_cert from "@/images/certificates/integrify_cert.png";
+import az204_cert from "@/images/certificates/az204_cert.png";
 import GoToTopComponent from "@/components/GoToTopComponent";
 
 import { motion, useMotionValue } from "framer-motion";
@@ -139,6 +140,13 @@ const certificate = () => {
               description="Learn how to build fullstack web applications using React and .NET, have a chance to work with PostgreSQL, Azure Cloud, and CI/CD concepts."
               link="/integrifycert.pdf"
               img={integrify_cert}
+            />
+
+            <FeaturedCertificate
+              title="Azure Developer Associate (AZ-204)"
+              description="A certificate of passing the Azure Developer Associate exam (AZ-204)."
+              link="https://learn.microsoft.com/en-us/users/binhnguyen-5892/credentials/87b4a87b2c461675"
+              img={az204_cert}
             />
           </ul>
           <h2 className="font-bold text-4xl w-full text-center my-16 mt-32">
