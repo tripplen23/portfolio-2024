@@ -15,6 +15,7 @@ import thesis2024 from "@/images/projects/thesis2024.png";
 import portfolio2022 from "@/images/projects/portfolio2022.png";
 import portfolio2024 from "@/images/projects/portfolio2024.png";
 import azeventmanagement from "@/images/projects/azeventmanagement.png";
+import bioGenerator from "@/images/projects/bio_generator.png";
 
 // Backend Ecommerce
 const linkProject1 = "https://sync-ecommerce.azurewebsites.net/index.html";
@@ -43,6 +44,10 @@ const githubProject6 = "https://github.com/tripplen23/portfolio-2024";
 // Az Event Management 2024
 const linkProject7 = "https://github.com/tripplen23/az-eventmanagement";
 const githubProject7 = "https://github.com/tripplen23/az-eventmanagement";
+
+// Bio Generator 2024
+const linkProject8 = "https://bio-generator-wine.vercel.app/";
+const githubProject8 = "https://github.com/tripplen23/bio-generator";
 
 const FramerImage = motion(Image);
 
@@ -227,6 +232,16 @@ const ProjectPage = () => {
                 img={azeventmanagement}
                 link={linkProject7}
                 github={githubProject7}
+              />
+            </div>
+            <div className="col-span-12">
+              <FeaturedProject
+                type="AI Bio Generator"
+                title="A hands on project to practice with GroqCloud and FrontEnd libraries"
+                summary="Bio Generator is a simple Generative AI Project for enhance my front-end skill. Through this project, I had chance to practice with AI API from GroqCloud and Vercel AI SDK."
+                img={bioGenerator}
+                link={linkProject8}
+                github={githubProject8}
               />
             </div>
           </div>
