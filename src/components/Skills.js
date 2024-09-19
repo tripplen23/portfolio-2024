@@ -31,13 +31,13 @@ const Skills = () => {
 
         <Skill name="CSS" postionX="-5vw" postionY="-10vw" />
         <Skill name="HTML" postionX="-25vw" postionY="2vw" />
-        <Skill name="PostgreSQL" postionX="-15vw" postionY="8vw" />
+        <Skill name="PostgreSQL" postionX="-22vw" postionY="-23vw" />
         <Skill name="C#" postionX="20vw" postionY="6vw" />
         <Skill name="ASP" postionX="35vw" postionY="8vw" />
         <Skill name=".NET" postionX="0vw" postionY="12vw" />
         <Skill name="Azure Cloud" postionX="3vw" postionY="12vw" />
         <Skill name="Docker" postionX="5vw" postionY="25vw" />
-        <Skill name="Github Action" postionX="9vw" postionY="-5vw" />
+        <Skill name="Github Action" postionX="-15vw" postionY="28vw" />
         <Skill name="Python" postionX="-20vw" postionY="-15vw" />
         <Skill name="Java Android" postionX="15vw" postionY="-12vw" />
         <Skill name="React" postionX="32vw" postionY="-5vw" />

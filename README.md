@@ -94,6 +94,10 @@ portfolio-2024/
 
 ## Installation
 
+### Prerequisites
+
+Node version 21.0.0
+
 1. Open your terminal and clone the repository with the following command:
 
    ```sh
