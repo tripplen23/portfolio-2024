@@ -8,6 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { GithubIcon } from "@/components/Icons";
 import { motion } from "framer-motion";
+import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import ecommerceBackEnd2024 from "@/images/projects/ecommerceBackEnd2024.png";
 import ecommerceFrontEnd2024 from "@/images/projects/ecommerceFrontEnd2024.png";
 import mahalo2022 from "@/images/projects/mahalo2022.png";
@@ -245,6 +246,16 @@ const ProjectPage = () => {
               />
             </div>
           </div>
+          <img
+            className="w-full h-auto mt-16 bg-gray"
+            alt="snake eating my contributions"
+            src="https://raw.githubusercontent.com/yunkhngn/yunkhngn/output/github-contribution-grid-snake-dark.svg"
+          />
+          <VelocityScroll
+            text="To be continued..."
+            default_velocity={5}
+            className="font-display text-center text-4xl font-bold mt-8 tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]"
+          />
           <GoToTopComponent />
         </Layout>
       </main>

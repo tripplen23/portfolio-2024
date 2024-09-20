@@ -9,6 +9,7 @@ import AnimatedText from "@/components/AnimatedText";
 import HireMe from "@/components/HireMe";
 import Link from "next/link";
 import lightBulb from "@/images/svgs/miscellaneous_icons_1.svg";
+import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 
 export default function Home() {
   return (
@@ -22,7 +23,6 @@ export default function Home() {
         <Layout className="pt-0 md:pt-2 sm:pt-1">
           <div className="flex items-center justify-between w-full lg:flex-col">
             <div className="w-1/2 md:w-full">
-              {" "}
               <Image
                 src={profilePic}
                 alt="BinhNguyen"

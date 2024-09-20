@@ -11,6 +11,7 @@ import GoToTopComponent from "@/components/GoToTopComponent";
 import Layout from "@/components/Layout";
 import profilPic from "@/images/profile/binhfnef2.jpg";
 import { useMotionValue, useInView, useSpring } from "framer-motion";
+import TypingAnimation from "@/components/magicui/typing-animation";
 
 const AnimatedNumbers = ({ value }) => {
   const ref = useRef(null);
@@ -81,13 +82,10 @@ const about = () => {
                 problems daily, and never stopping the grind — success follows
                 preparation.
               </p>
-              <p className="my-2 font-medium">
-                Curious about my current coding world? Keep scrolling to see my
-                skills, experiences, and more on this website and my GitHub. If
-                you think that my coding style would be a good piece for your
-                plan, let me know in advanced, I will not hesitate to make cool
-                things happen.
-              </p>
+              <TypingAnimation
+                className="my-2 text-base font-medium md:text-sm sm:text-xs"
+                text="Curious about my current coding world? Keep scrolling!!"
+              />
             </div>
             {/*Picture*/}
             <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light xl:col-span-4 md:order-1 md:col-span-8">

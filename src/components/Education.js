@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll } from "framer-motion";
 import LiIcon from "./LiIcon";
+import SparklesText from "@/components/magicui/sparkles-text";
 
 const Details = ({ type, time, place, info }) => {
   const ref = useRef(null);
@@ -35,9 +36,7 @@ const Education = () => {
   });
   return (
     <div className="my-64">
-      <h2 className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16">
-        Education
-      </h2>
+      <SparklesText className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16" text="Education" />
 
       <div ref={ref} className="w-[75%] mx-auto relative lg:w-[90%] md:w-full">
         <motion.div

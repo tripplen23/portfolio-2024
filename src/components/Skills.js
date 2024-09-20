@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import SparklesText from "@/components/magicui/sparkles-text";
 
 const Skill = ({ name, postionX, postionY }) => {
   return (
@@ -18,9 +19,10 @@ const Skill = ({ name, postionX, postionY }) => {
 const Skills = () => {
   return (
     <>
-      <h2 className="font-bold text-8xl mt-64 w-full text-center md:text-6xl md:mt-32">
-        Skills
-      </h2>
+      <SparklesText
+        className="font-bold text-8xl mt-64 w-full text-center md:text-6xl md:mt-32"
+        text="Skills"
+      />
       <div className="w-full h-screen relative flex items-center justify-center rounded-full bg-circularLight dark:bg-circularDark lg:h-[80vh] sm:h-[60vh] xs:h-[50vh] lg:bg-circularLightLg lg:dark:bg-circularDarkLg md:bg-circularLightMd md:dark:bg-circularDarkMd sm:bg-circularLightSm sm:dark:bg-circularDarkSm">
         <motion.div
           className="flex items-center justify-center rounded-full font-semibold bg-dark text-light p-8 shadow-dark cursor-pointer dark:text-dark dark:bg-light lg:p-6 md:p-4 xs:text-xs xs:p-2"
