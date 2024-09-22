@@ -8,8 +8,9 @@ import profilePic from "@/images/profile/binhnguyenanime.png";
 import AnimatedText from "@/components/AnimatedText";
 import HireMe from "@/components/HireMe";
 import Link from "next/link";
-import lightBulb from "@/images/svgs/miscellaneous_icons_1.svg";
-import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
+import syn1608 from "@/images/syn1608.png";
+import ShineBorder from "@/components/magicui/shine-border";
+import HyperText from "@/components/magicui/hyper-text";
 
 export default function Home() {
   return (
@@ -65,8 +66,17 @@ export default function Home() {
           <GoToTopComponent />
         </Layout>
         <HireMe />
-        <div className="absolute right-8 bottom-8 inline-block w-24 md:hidden">
-          <Image src={lightBulb} alt="BinhNguyen" className="w-full h-auto" />
+        <div>
+          <ShineBorder className=" absolute right-8 bottom-8 inline-block w-24 bg-dark md:hidden">
+            <div className="flex items-center">
+              <Image src={syn1608} alt="BinhNguyen" className="w-24 h-24" />
+              <HyperText
+                className="ml-2 text-light"
+                text="Represent"
+                duration={3800}
+              />
+            </div>
+          </ShineBorder>
         </div>
       </main>
     </>
