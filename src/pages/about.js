@@ -83,7 +83,7 @@ const about = () => {
                 preparation.
               </p>
               <TypingAnimation
-                className="my-2 text-base font-medium md:text-sm sm:text-xs"
+                className="my-2 text-base font-medium"
                 text="Curious about my current coding world? Keep scrolling!!"
               />
             </div>
