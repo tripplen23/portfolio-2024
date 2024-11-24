@@ -17,6 +17,8 @@ import portfolio2022 from "@/images/projects/portfolio2022.png";
 import portfolio2024 from "@/images/projects/portfolio2024.png";
 import azeventmanagement from "@/images/projects/azeventmanagement.png";
 import bioGenerator from "@/images/projects/bio_generator.png";
+import myEvent from "@/images/projects/myEvent.png";
+import thriveConnect from "@/images/projects/thriveConnect.png";
 
 // Backend Ecommerce
 const linkProject1 = "https://sync-ecommerce.azurewebsites.net/index.html";
@@ -49,6 +51,15 @@ const githubProject7 = "https://github.com/tripplen23/az-eventmanagement";
 // Bio Generator 2024
 const linkProject8 = "https://bio-generator-wine.vercel.app/";
 const githubProject8 = "https://github.com/tripplen23/bio-generator";
+
+// Event Management App
+const linkProject9 = "https://github.com/tripplen23/myEvents/tree/develop";
+const githubProject9 = "https://github.com/tripplen23/myEvents/tree/develop";
+
+// Thrive Connect App
+const linkProject10 = "https://thriveconnect.vercel.app/";
+const githubProject10 =
+  "https://github.com/tripplen23/techwizards-ThriveConnectApp2024";
 
 const FramerImage = motion(Image);
 
@@ -237,19 +248,43 @@ const ProjectPage = () => {
             </div>
             <div className="col-span-12">
               <FeaturedProject
-                type="AI Bio Generator"
-                title="A hands on project to practice with GroqCloud and FrontEnd libraries"
+                type="AI Generative Project"
+                title="AI Bio Generator"
                 summary="Bio Generator is a simple Generative AI Project for enhance my front-end skill. Through this project, I had chance to practice with AI API from GroqCloud and Vercel AI SDK."
                 img={bioGenerator}
                 link={linkProject8}
                 github={githubProject8}
               />
             </div>
+            {/*
+            <div className="col-span-12">
+              <FeaturedProject
+                type="AI Generative Project"
+                title="Event Management Application (On-going)"
+                summary=" A PET project to practice with LangGraph, LangChain framework and Vector Database of MongoDB. The project is a simple Event Management System that allows event organizer and normal user to match up each other based on events all around the World. For AI feature, there is an chatbot that can read all the information of events inside the database then combine with user's preferences for recommending them the best events based on their needs. The project is still on-going and will be updated soon."
+                img={myEvent}
+                link={linkProject9}
+                github={githubProject9}
+              />
+            </div>
+            */}
+            <div className="col-span-12">
+              <FeaturedProject
+                type="AI Generative Project"
+                title="Thrive Connect Application"
+                summary="An AI integrated matching platform for job seekers and companies based on skills, company's culture and benefit preferences. The project uses AI for rating and arrange the best match for both sides with the optimized RAG algorithm. The project is rated 8.5/10 point on Junction Hackathon 2024."
+                img={thriveConnect}
+                link={linkProject10}
+                github={githubProject10}
+              />
+            </div>
           </div>
-          <img
+          <Image
             className="w-full h-auto mt-16 bg-gray"
             alt="snake eating my contributions"
             src="https://raw.githubusercontent.com/yunkhngn/yunkhngn/output/github-contribution-grid-snake-dark.svg"
+            width={1200}
+            height={600}
           />
           <VelocityScroll
             text="To be continued..."

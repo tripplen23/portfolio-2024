@@ -55,9 +55,9 @@ const Experience = () => {
         />
         <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
           <Details
-            position="Intern"
+            position="Software Engineer Trainee"
             company="ITD"
-            time="Spring & Summer 2023"
+            time="January 2023 - August 2023"
             companyLink="http://toancau.vn/en/"
             address="Ho Chi Minh city, Vietnam"
             work="Worked on a team responsible for testing and developing Software products included AI Camera Management System, Vote counting software."
@@ -65,18 +65,26 @@ const Experience = () => {
           <Details
             position="Student partner"
             company="Pinja"
-            time="Winter 2023"
+            time="September 2023 - December 2023"
             companyLink="https://pinja.com/"
             address="Vaasa, Finland"
             work="Worked on a team of 3 people for building Gant Chart Tool project using Vue3 and Bryntum under the supervised of Pinja development team."
           />
           <Details
-            position="Intern"
+            position="Software Developer Trainee"
             company="Integrify"
-            time="Spring 2024"
+            time="January 2024 - September 2024"
             companyLink="https://www.integrify.io/"
             address="Helsinki, Finland"
             work="Worked and connected to the community of passionate code learners in all around the Finland, responsible for doing Fullstack development tasks."
+          />
+          <Details
+            position="Software Developer Trainee"
+            company="Lakihelppi"
+            time="November 2024 - February 2025"
+            companyLink="https://lakihelppi.com/"
+            address="Helsinki, Finland"
+            work="Develop the AI Integrated Para legal for software legal platform.Integrated Generative AI to project for optimizing the data checking by Natural Language."
           />
         </ul>
       </div>

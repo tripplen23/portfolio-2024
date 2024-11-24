@@ -16,6 +16,7 @@ import ofh_typescript from "@/images/certificates/ofh_typescript.png";
 import vamk_diploma from "@/images/certificates/vamk_diploma.png";
 import integrify_cert from "@/images/certificates/integrify_cert.png";
 import az204_cert from "@/images/certificates/az204_cert.png";
+import junction2024_img from "@/images/certificates/junction2024_img.png";
 import GoToTopComponent from "@/components/GoToTopComponent";
 
 import { motion, useMotionValue } from "framer-motion";
@@ -194,6 +195,12 @@ const certificate = () => {
               date="January, 2024"
               link="https://studies.cs.helsinki.fi/stats/api/certificate/fs-cicd/en/5de71736172166a530e1fe9a3fb1bebe"
               img={ofh_cicd}
+            />
+            <Certificate
+              title="Junction Hackathon 2024"
+              date="Novemver, 2024"
+              link="https://www.linkedin.com/in/binh-duc-nguyen/overlay/1732288150001/single-media-viewer/?profileId=ACoAACf9kfgBCdTE_OZIOps0rMDV198bR6O2n_Q"
+              img={junction2024_img}
             />
           </ul>
           <GoToTopComponent />
