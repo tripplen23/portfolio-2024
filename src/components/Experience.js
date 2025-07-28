@@ -79,12 +79,20 @@ const Experience = () => {
             work="Worked and connected to the community of passionate code learners in all around the Finland, responsible for doing Fullstack development tasks."
           />
           <Details
-            position="Software Developer Trainee"
+            position="AI Software Developer"
             company="Lakihelppi"
             time="November 2024 - February 2025"
             companyLink="https://lakihelppi.com/"
             address="Helsinki, Finland"
             work="Develop the AI Integrated Para legal for software legal platform.Integrated Generative AI to project for optimizing the data checking by Natural Language."
+          />
+          <Details
+            position="AI Software Developer"
+            company="Rubberduck AI OY"
+            time="February 2025 - Present"
+            companyLink="https://rubberduck.live/"
+            address="Helsinki, Finland"
+            work="Develop and Implement the orchestration of AI Agents product for data management platform."
           />
         </ul>
       </div>
