@@ -17,8 +17,12 @@ import portfolio2022 from "@/images/projects/portfolio2022.png";
 import portfolio2024 from "@/images/projects/portfolio2024.png";
 import azeventmanagement from "@/images/projects/azeventmanagement.png";
 import bioGenerator from "@/images/projects/bio_generator.png";
-import myEvent from "@/images/projects/myEvent.png";
 import thriveConnect from "@/images/projects/thriveConnect.png";
+import trammeoblog from "@/images/projects/trammeoblog.webp";
+
+// Trammeo Blog
+const linkProject0 = "https://trammeo-blog.vercel.app/en";
+const githubProject0 = "https://github.com/tripplen23/trammeo-blog";
 
 // Backend Ecommerce
 const linkProject1 = "https://sync-ecommerce.azurewebsites.net/index.html";
@@ -182,6 +186,16 @@ const ProjectPage = () => {
           <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
             <div className="col-span-12">
               <FeaturedProject
+                type="Trammeo."
+                title="Trammeo. The Blog"
+                summary="A project built by GSAP, CMS Sanity, NextJS for art purpose in collaboration with artist Trammeo."
+                img={trammeoblog}
+                link={linkProject0}
+                github={githubProject0}
+              />
+            </div>
+            <div className="col-span-12">
+              <FeaturedProject
                 type="Ecommerce Back End"
                 title="Synchronize ecommerce webshop Server"
                 summary="A project built during my time at Integrify Academy. It was a great experience learning how to build a back end webshop using C#, .NET, ASP, and PostgreSQL. The project was offered me a chance to work with the other developers that enhance me a lot of skills in communication in the Tech World."
@@ -256,18 +270,6 @@ const ProjectPage = () => {
                 github={githubProject8}
               />
             </div>
-            {/*
-            <div className="col-span-12">
-              <FeaturedProject
-                type="AI Generative Project"
-                title="Event Management Application (On-going)"
-                summary=" A PET project to practice with LangGraph, LangChain framework and Vector Database of MongoDB. The project is a simple Event Management System that allows event organizer and normal user to match up each other based on events all around the World. For AI feature, there is an chatbot that can read all the information of events inside the database then combine with user's preferences for recommending them the best events based on their needs. The project is still on-going and will be updated soon."
-                img={myEvent}
-                link={linkProject9}
-                github={githubProject9}
-              />
-            </div>
-            */}
             <div className="col-span-12">
               <FeaturedProject
                 type="AI Generative Project"
