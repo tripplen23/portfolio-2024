@@ -101,6 +101,7 @@ const Navbar: React.FC = () => {
           <CustomLink href="/" title="Home" className="mr-4" />
           <CustomLink href="/about" title="About" className="mx-4" />
           <CustomLink href="/project" title="Project" className="mx-4" />
+          <CustomLink href="/blog" title="Blog" className="mx-4" />
           <CustomLink
             href="/certificate"
             title="Certificate"
@@ -168,6 +169,12 @@ const Navbar: React.FC = () => {
             <CustomMobileLink
               href="/project"
               title="Project"
+              className=""
+              toggle={handleClick}
+            />
+            <CustomMobileLink
+              href="/blog"
+              title="Blog"
               className=""
               toggle={handleClick}
             />
