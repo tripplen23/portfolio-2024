@@ -91,7 +91,7 @@ export default function BlogPost({ post }: PageProps) {
           <article className="prose prose-lg dark:prose-invert max-w-3xl mx-auto w-full px-4">
             <div
               dangerouslySetInnerHTML={{ __html: post.content }}
-              className="[&_pre]:overflow-x-auto [&_pre]:max-w-[100%] [&_pre]:whitespace-pre [&_pre]:text-sm [&_pre]:sm:text-base"
+              className="[&_pre]:overflow-x-auto [&_pre]:max-w-[100vw] [&_pre]:whitespace-pre [&_pre]:text-xs [&_pre]:leading-tight [&_pre_font]:font-mono"
             />
           </article>
 
