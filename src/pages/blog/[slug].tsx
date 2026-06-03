@@ -1,7 +1,7 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
 import { getBlogPost, getAllSlugs, type BlogPost } from "@/lib/useBlogIndex";
-import AnimatedText from "@/components/AnimatedText";
+
 import Layout from "@/components/Layout";
 import TransitionEffect from "@/components/TransitionEffect";
 
@@ -44,7 +44,7 @@ export default function BlogPost({ post }: PageProps) {
       <main className="flex w-full flex-col items-center dark:text-light">
         <Layout className="pt-16">
           {/* Header */}
-          <div className="mb-10 text-center w-full max-w-3xl">
+          <div className="mb-10 text-center w-full max-w-3xl mx-auto">
             <div className="flex items-center justify-center gap-4 text-sm text-dark/60 dark:text-light/60 mb-5">
               <span>{post.date}</span>
               {post.readingTime && (
@@ -54,11 +54,10 @@ export default function BlogPost({ post }: PageProps) {
                 </>
               )}
             </div>
-            <AnimatedText
-              text={post.title}
-              className="!text-4xl md:!text-5xl mb-5"
-            />
-            <p className="text-lg text-dark/70 dark:text-light/70">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              {post.title}
+            </h1>
+            <p className="text-xl md:text-2xl text-dark/70 dark:text-light/70 italic leading-relaxed mb-8">
               {post.description}
             </p>
             {post.tags && post.tags.length > 0 && (
