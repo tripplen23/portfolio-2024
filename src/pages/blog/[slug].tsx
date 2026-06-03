@@ -4,6 +4,21 @@ import { getBlogPost, getAllSlugs } from "@/lib/useBlogIndex";
 import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import TransitionEffect from "@/components/TransitionEffect";
+import Image from "next/image";
+
+interface PageProps {
+  params: { slug: string };
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  if (!params?.slug) return { title: "Blog | Binh Nguyen" };
+  const post = getBlogPost(params.slug);
+  if (!post) return { title: "Post Not Found" };
+  return {
+    title: post.title,
+    description: post.description,
+  };
+}
 
 // Force dynamic rendering to avoid static generation issues with blog data
 export const dynamic = "force-dynamic";
@@ -82,6 +97,7 @@ export default function BlogPost({ params }: PageProps) {
                 src={post.coverImage}
                 alt={post.title}
                 className="object-cover w-full h-full"
+                referrerPolicy="no-referrer"
               />
             </div>
           )}

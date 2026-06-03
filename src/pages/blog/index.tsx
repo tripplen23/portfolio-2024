@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { useBlogIndex } from "@/lib/useBlogIndex";
+import { getBlogPosts } from "@/lib/useBlogIndex";
 import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import Link from "next/link";
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogIndex() {
-  const posts = useBlogIndex();
+  const posts = getBlogPosts();
 
   return (
     <>

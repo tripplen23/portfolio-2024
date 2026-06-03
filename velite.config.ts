@@ -8,18 +8,16 @@ export default defineConfig({
       schema: s.object({
         title: s.string(),
         description: s.string(),
-        date: s.string(),
+        date: s.isodate(),
         tags: s.array(s.string()).optional().default([]),
         readingTime: s.string().optional(),
         coverImage: s.string().optional(),
         draft: s.boolean().optional().default(false),
         content: s.markdown(),
-      }),
-      // @ts-ignore - velite 0.3.1 supports transform at runtime
-      transform: (post: { $path: string; [key: string]: unknown }) => {
+      }).transform((post) => {
         const slug = post.$path.replace("blog/", "").replace(".mdx", "");
         return { ...post, slug };
-      },
+      }),
     },
   },
 });

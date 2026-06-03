@@ -151,7 +151,7 @@ messaging:
   },
 ];
 
-export function useBlogIndex(): BlogPost[] {
+export function getBlogPosts(): BlogPost[] {
   return blogPosts;
 }
 
