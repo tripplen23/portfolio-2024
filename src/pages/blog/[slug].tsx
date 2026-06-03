@@ -44,7 +44,7 @@ export default function BlogPost({ post }: PageProps) {
       <main className="flex w-full flex-col items-center dark:text-light">
         <Layout className="pt-16">
           {/* Header */}
-          <div className="mb-10 text-center w-full max-w-3xl">
+          <div className="mb-10 text-center w-full max-w-3xl mx-auto">
             <div className="flex items-center justify-center gap-4 text-sm text-dark/60 dark:text-light/60 mb-5">
               <span>{post.date}</span>
               {post.readingTime && (
