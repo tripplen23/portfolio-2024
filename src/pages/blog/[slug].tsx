@@ -1,7 +1,7 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
 import { getBlogPost, getAllSlugs, type BlogPost } from "@/lib/useBlogIndex";
-import AnimatedText from "@/components/AnimatedText";
+
 import Layout from "@/components/Layout";
 import TransitionEffect from "@/components/TransitionEffect";
 
