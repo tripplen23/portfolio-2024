@@ -1,32 +1,31 @@
-import type { Metadata } from "next";
+import type { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
-import { getBlogPost } from "@/lib/useBlogIndex";
+import { getBlogPost, getAllSlugs, type BlogPost } from "@/lib/useBlogIndex";
 import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import TransitionEffect from "@/components/TransitionEffect";
-import Image from "next/image";
 
 interface PageProps {
-  params: { slug: string };
+  post: BlogPost | null;
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  if (!params?.slug) return { title: "Blog | Binh Nguyen" };
-  const post = getBlogPost(params.slug);
-  if (!post) return { title: "Post Not Found" };
+export const getStaticPaths: GetStaticPaths = async () => {
+  const slugs = getAllSlugs();
   return {
-    title: post.title,
-    description: post.description,
+    paths: slugs.map((slug) => ({ params: { slug } })),
+    fallback: false,
   };
-}
+};
 
-// Force dynamic rendering to avoid static generation issues with blog data
-export const dynamic = "force-dynamic";
+export const getStaticProps: GetStaticProps<PageProps> = async ({ params }) => {
+  const slug = params?.slug as string;
+  const post = getBlogPost(slug);
+  return {
+    props: { post: post ?? null },
+  };
+};
 
-export default function BlogPost({ params }: PageProps) {
-  const slug = params?.slug;
-  const post = slug ? getBlogPost(slug) : undefined;
-
+export default function BlogPost({ post }: PageProps) {
   if (!post) {
     return (
       <Layout>
