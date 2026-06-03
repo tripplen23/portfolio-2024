@@ -76,7 +76,7 @@ export default function BlogPost({ post }: PageProps) {
 
           {/* Cover Image */}
           {post.coverImage && (
-            <div className="relative mb-12 h-64 md:h-96 w-full max-w-3xl overflow-hidden rounded-2xl">
+            <div className="relative mb-12 h-64 md:h-96 w-full max-w-3xl mx-auto overflow-hidden rounded-2xl">
               <img
                 src={post.coverImage}
                 alt={post.title}
