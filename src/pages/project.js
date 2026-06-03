@@ -18,6 +18,7 @@ import portfolio2024 from "@/images/projects/portfolio2024.png";
 import azeventmanagement from "@/images/projects/azeventmanagement.png";
 import bioGenerator from "@/images/projects/bio_generator.png";
 import thriveConnect from "@/images/projects/thriveConnect.png";
+import aidaProject from "@/images/projects/aida_preview.png";
 import trammeoblog from "@/images/projects/trammeoblog.webp";
 
 // Trammeo Blog
@@ -64,6 +65,10 @@ const githubProject9 = "https://github.com/tripplen23/myEvents/tree/develop";
 const linkProject10 = "https://thriveconnect.vercel.app/";
 const githubProject10 =
   "https://github.com/tripplen23/techwizards-ThriveConnectApp2024";
+
+// Aida AI Website Builder @ group.one / one.com
+const linkProject11 = "https://www.one.com/en-gb/websitebuilder/";
+const githubProject11 = "https://www.one.com/en-gb/websitebuilder/";
 
 const FramerImage = motion(Image);
 
@@ -278,6 +283,16 @@ const ProjectPage = () => {
                 img={thriveConnect}
                 link={linkProject10}
                 github={githubProject10}
+              />
+            </div>
+            <div className="col-span-12">
+              <FeaturedProject
+                type="AI Product · group.one"
+                title="Aida AI Website Builder — One Chat. Real Customers. Real Business."
+                summary="Aida is an AI-native business platform built specifically for European small businesses and start-ups — one of the first AI-native platforms of its kind. I contributed as an AI Backend Developer, building the AI agent orchestration that powers the chat-to-website experience: from prompt parsing and agent routing to content generation and multi-step task automation. The platform integrates an online shop, booking system, blog, professional email, and European hosting — all managed through a conversational AI interface."
+                img={aidaProject}
+                link={linkProject11}
+                github={githubProject11}
               />
             </div>
           </div>
