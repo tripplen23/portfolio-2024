@@ -1,15 +1,16 @@
 import "@/styles/globals.css";
-import { Orbitron } from "next/font/google";
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import type { AppProps } from "next/app";
+import { IBM_Plex_Mono } from "next/font/google";
 
-const orbitron = Orbitron({
+const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  variable: "--font-orb",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-mono",
 });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -21,7 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/icon.jpg" />
       </Head>
       <main
-        className={`${orbitron.variable} font-orb bg-light dark:bg-dark w-full min-h-screen`}
+        className={`${plexMono.variable} font-mono bg-light dark:bg-dark w-full min-h-screen`}
       >
         <Navbar />
         <AnimatePresence mode="wait">

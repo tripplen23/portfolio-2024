@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        orb: ["var(--font-orb)"],
+        mono: ["var(--font-mono)"],
       },
     },
     screens: {
