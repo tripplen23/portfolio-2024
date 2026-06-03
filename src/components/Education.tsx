@@ -3,8 +3,15 @@ import { motion, useScroll } from "framer-motion";
 import LiIcon from "./LiIcon";
 import SparklesText from "@/components/magicui/sparkles-text";
 
-const Details = ({ type, time, place, info }) => {
-  const ref = useRef(null);
+interface EducationItemProps {
+  type: string;
+  time: string;
+  place: string;
+  info: string;
+}
+
+const Details: React.FC<EducationItemProps> = ({ type, time, place, info }) => {
+  const ref = useRef<HTMLLIElement | null>(null);
   return (
     <li
       ref={ref}
@@ -28,8 +35,8 @@ const Details = ({ type, time, place, info }) => {
   );
 };
 
-const Education = () => {
-  const ref = useRef(null);
+const Education: React.FC = () => {
+  const ref = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "center start"],

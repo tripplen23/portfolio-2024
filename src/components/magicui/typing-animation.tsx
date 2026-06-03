@@ -3,13 +3,19 @@ import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
+interface TypingAnimationProps {
+  text: string;
+  duration?: number;
+  className?: string;
+}
+
 export default function TypingAnimation({
   text,
   duration = 200,
-  className
-}) {
-  const [displayedText, setDisplayedText] = useState("");
-  const [i, setI] = useState(0);
+  className,
+}: TypingAnimationProps) {
+  const [displayedText, setDisplayedText] = useState<string>("");
+  const [i, setI] = useState<number>(0);
 
   useEffect(() => {
     const typingEffect = setInterval(() => {
@@ -24,7 +30,7 @@ export default function TypingAnimation({
     return () => {
       clearInterval(typingEffect);
     };
-  }, [duration, i]);
+  }, [duration, i, text]);
 
   return (
     (<h1

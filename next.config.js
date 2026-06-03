@@ -5,7 +5,8 @@ const path = require("path");
 module.exports = {
   reactStrictMode: true,
   webpack: (config) => {
-    config.resolve.alias["@"] = path.resolve(__dirname);
+    // Keep "@" aligned with tsconfig paths ("@/*" -> "./src/*")
+    config.resolve.alias["@"] = path.resolve(__dirname, "src");
     return config;
   },
 };

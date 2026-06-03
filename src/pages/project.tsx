@@ -5,7 +5,7 @@ import TransitionEffect from "@/components/TransitionEffect";
 import Layout from "@/components/Layout";
 import GoToTopComponent from "@/components/GoToTopComponent";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { GithubIcon } from "@/components/Icons";
 import { motion } from "framer-motion";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
@@ -72,7 +72,23 @@ const githubProject11 = "https://www.one.com/en-gb/websitebuilder/";
 
 const FramerImage = motion(Image);
 
-const FeaturedProject = ({ type, title, summary, img, link, github }) => {
+interface FeaturedProjectProps {
+  type: string;
+  title: string;
+  summary: string;
+  img: StaticImageData | string;
+  link: string;
+  github: string;
+}
+
+const FeaturedProject = ({
+  type,
+  title,
+  summary,
+  img,
+  link,
+  github,
+}: FeaturedProjectProps) => {
   return (
     <article className="w-full flex items-center justify-between relative rounded-br-2xl rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12 dark:bg-dark dark:border-light lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4">
       <div className="absolute top-0 -right-3 -z-10 w-[100.5%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl xs:-right-2 sm:h-[102%] xs:w-full xs:rounded-[1.5rem]" />
@@ -125,7 +141,15 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
   );
 };
 
-const Project = ({ type, title, img, link, github }) => {
+interface ProjectProps {
+  type: string;
+  title: string;
+  img: StaticImageData | string;
+  link: string;
+  github: string;
+}
+
+const Project = ({ type, title, img, link, github }: ProjectProps) => {
   return (
     <article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative dark:bg-dark dark:border-light xs:p-4">
       <div className="absolute top-0 -right-3 -z-10 w-[100.5%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl dark:bg-light md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]" />

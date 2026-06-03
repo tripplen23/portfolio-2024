@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import TransitionEffect from "@/components/TransitionEffect";
@@ -23,19 +23,29 @@ import { motion, useMotionValue } from "framer-motion";
 
 const FramerImage = motion(Image);
 
-const MovingImg = ({ title, img, link }) => {
+interface MovingImgProps {
+  title: string;
+  img: StaticImageData | string;
+  link: string;
+}
+
+const MovingImg = ({ title, img, link }: MovingImgProps) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const imgRef = useRef(null);
+  const imgRef = useRef<HTMLImageElement | null>(null);
 
-  function handleMouse(event) {
-    imgRef.current.style.display = "inline-block";
+  function handleMouse(event: React.MouseEvent<HTMLAnchorElement>) {
+    if (imgRef.current) {
+      imgRef.current.style.display = "inline-block";
+    }
     x.set(event.pageX);
     y.set(-10);
   }
 
-  function handleMouseLeave(event) {
-    imgRef.current.style.display = "none";
+  function handleMouseLeave() {
+    if (imgRef.current) {
+      imgRef.current.style.display = "none";
+    }
     x.set(0);
     y.set(0);
   }
@@ -51,7 +61,7 @@ const MovingImg = ({ title, img, link }) => {
         {title}
       </h2>
       <FramerImage
-        style={{ x: x, y: y }}
+        style={{ x, y } as any}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, transition: { duration: 0.2 } }}
         ref={imgRef}
@@ -63,7 +73,14 @@ const MovingImg = ({ title, img, link }) => {
   );
 };
 
-const Certificate = ({ img, title, date, link }) => {
+interface CertificateProps {
+  img: StaticImageData | string;
+  title: string;
+  date: string;
+  link: string;
+}
+
+const Certificate = ({ img, title, date, link }: CertificateProps) => {
   return (
     <motion.li
       initial={{ y: 200 }}
@@ -79,7 +96,19 @@ const Certificate = ({ img, title, date, link }) => {
   );
 };
 
-const FeaturedCertificate = ({ img, title, description, link }) => {
+interface FeaturedCertificateProps {
+  img: StaticImageData | string;
+  title: string;
+  description: string;
+  link: string;
+}
+
+const FeaturedCertificate = ({
+  img,
+  title,
+  description,
+  link,
+}: FeaturedCertificateProps) => {
   return (
     <li className="relative col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl dark:bg-dark dark:border-light">
       <div className="absolute top-0 -right-3 -z-10 w-[100.5%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl" />

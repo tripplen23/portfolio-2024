@@ -13,12 +13,17 @@ import profilPic from "@/images/profile/binhfnef2.jpg";
 import { useMotionValue, useInView, useSpring } from "framer-motion";
 import TypingAnimation from "@/components/magicui/typing-animation";
 
-const AnimatedNumbers = ({ value }) => {
-  const ref = useRef(null);
+interface AnimatedNumbersProps {
+  value: number;
+}
 
-  const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, { duration: 2000 });
-  const isInView = useInView(ref, { once: true });
+const AnimatedNumbers = ({ value }: AnimatedNumbersProps) => {
+  // span element where the animated number will be rendered
+	const ref = useRef<HTMLSpanElement | null>(null);
+
+	const motionValue = useMotionValue(0);
+	const springValue = useSpring(motionValue, { duration: 2000 });
+	const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
     if (isInView) {

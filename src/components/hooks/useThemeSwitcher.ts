@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-const useThemeSwitcher = () => {
+type ThemeMode = "light" | "dark";
+
+const useThemeSwitcher = (): [ThemeMode, React.Dispatch<React.SetStateAction<ThemeMode>>] => {
   const preferDarkQuery = "(prefers-color-scheme: dark)";
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState<ThemeMode>("light");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
