@@ -54,11 +54,10 @@ export default function BlogPost({ post }: PageProps) {
                 </>
               )}
             </div>
-            <AnimatedText
-              text={post.title}
-              className="!text-4xl md:!text-5xl mb-5"
-            />
-            <p className="text-lg text-dark/70 dark:text-light/70">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              {post.title}
+            </h1>
+            <p className="text-xl md:text-2xl text-dark/70 dark:text-light/70 italic leading-relaxed mb-8">
               {post.description}
             </p>
             {post.tags && post.tags.length > 0 && (

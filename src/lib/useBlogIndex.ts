@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Me: "This is either the coolest thing I've seen, or I'm about to give my laptop a terminal disease."</p>
 
-<hr />
+<br><br>
 
 <h2>What Is Hermes?</h2>
 
@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Always online.</strong> Text it on Discord, it responds. Schedule a cron job, it runs. Perfect for a solo dev with zero willpower to maintain their own portfolio.</p>
 
-<hr />
+<br><br>
 
 <h2>Setup</h2>
 
@@ -83,7 +83,7 @@ sudo tailscale up --accept-routes
 
 <p>Done. Now I'm texting my laptop to update my portfolio while <em>still sitting down</em>. Peak productivity.</p>
 
-<hr />
+<br><br>
 
 <h2>Portfolio Workflow</h2>
 
@@ -108,7 +108,7 @@ sudo tailscale up --accept-routes
 
 <p>Hermes: cloned repo → created branch → downloaded screenshots → added project with TypeScript types → opened PR → messaged me on Discord. <em>~3 minutes. I didn't get up from my chair.</em></p>
 
-<hr />
+<br><br>
 
 <h2>Skills & Automation</h2>
 
@@ -122,7 +122,7 @@ sudo tailscale up --accept-routes
 
 <p>I also set up cron jobs — portfolio build status checked daily, main → dev sync weekly. <em>The laziest success story I've ever written.</em></p>
 
-<hr />
+<br><br>
 
 <h2>Results</h2>
 
@@ -133,7 +133,7 @@ sudo tailscale up --accept-routes
 <tr><td>Build failures</td><td>Found manually</td><td>Notified on Discord immediately</td></tr>
 </tbody></table>
 
-<hr />
+<br><br>
 
 <h2>What's Next</h2>
 
@@ -143,7 +143,7 @@ sudo tailscale up --accept-routes
 <li>Multi-agent workflows — research + implementation in parallel</li>
 </ul>
 
-<hr />
+<br><br>
 
 <p><em>Portfolio powered by <a href="https://hermes-agent.nousresearch.com/">Hermes Agent</a> + Next.js + Vercel.</em></p>
 
