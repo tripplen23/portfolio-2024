@@ -1,0 +1,172 @@
+---
+title: "From 0 to AI-Powered Portfolio: How I Built a 24/7 AI Agent with Hermes"
+description: "Tired of managing multiple AI tools manually? Here's how I connected Hermes Agent to my portfolio and turned a static site into a living, breathing assistant that never sleeps."
+date: "2026-06-03"
+slug: "building-hermes-portfolio-agent"
+tags: ["AI", "Hermes", "Next.js", "DevOps"]
+readingTime: "12 min"
+coverImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop"
+---
+
+## The Problem
+
+Every developer knows this feeling: you're deep in a project, and suddenly you need to check something on your portfolio — only to realize it's outdated, the contact form is broken, or you forgot to update that project from three months ago.
+
+I've been there. My portfolio sat static for months, collecting dust while I jumped between Claude CLI, ChatGPT, and a dozen other tools. Each one powerful on its own, but none of them *connected* to my actual work.
+
+That's when I discovered **Hermes Agent**.
+
+## What is Hermes Agent?
+
+[Hermes](https://hermes-agent.nousresearch.com/) is an open-source AI agent framework that runs on your own infrastructure. Think of it as a personal AI assistant that lives on your machine (or a server), connected to your preferred messaging platforms — Discord, WhatsApp, Telegram — and can access your tools, files, and workflows.
+
+The killer feature? **It's always online.** Unlike a CLI tool you have to manually invoke, Hermes runs 24/7, waiting for messages, running scheduled tasks, and monitoring your projects.
+
+## The Setup
+
+My portfolio runs on a **MSI Bravo 17** laptop — 12 cores, 16GB RAM, Ubuntu 24.04. Not a powerhouse, but more than enough for a personal AI agent.
+
+Here's the stack I built:
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  Laptop (MSI Bravo 17, Ubuntu 24.04)                     │
+│                                                          │
+│  ┌──────────────┐    ┌──────────────┐    ┌────────────┐ │
+│  │ Hermes Agent │───▶│ Tailscale    │───▶│ Discord    │ │
+│  │ (Node.js)    │    │ (VPN Tunnel) │    │ (Messaging)│ │
+│  └──────────────┘    └──────────────┘    └────────────┘ │
+│         │                                        ▲      │
+│         ▼                                        │      │
+│  ┌──────────────┐                           ┌────────┐ │
+│  │ Portfolio    │                           │ Phone  │ │
+│  │ (Next.js)    │                           │ (Binh) │ │
+│  └──────────────┘                           └────────┘ │
+└─────────────────────────────────────────────────────────┘
+```
+
+### Step 1: Install Hermes
+
+```bash
+npm install -g hermes-agent
+hermes setup
+```
+
+The setup wizard asks for your preferred LLM provider. I went with **OpenCode Go** (runs locally, respects privacy) with **Qwen3.7-max** as the model. You can also chain fallback models — if the primary is unavailable, it automatically tries the next one.
+
+### Step 2: Configure Tailscale
+
+Since I wanted to access Hermes from anywhere (including my phone), I set up [Tailscale](https://tailscale.com/) for zero-config VPN. The MSI laptop joins my tailnet, and I can reach it via a persistent IP address (`100.100.198.109`) from any device.
+
+```bash
+# On the laptop (MSI Bravo 17)
+curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale up --accept-routes
+
+# Now accessible as: 100.100.198.109
+```
+
+### Step 3: Connect Discord
+
+Hermes supports multiple messaging platforms out of the box. I connected it to my Discord server so I can DM the agent from my phone while commuting:
+
+```yaml
+# ~/.hermes/config.yaml
+messaging:
+  discord:
+    enabled: true
+    bot_token: "${DISCORD_BOT_TOKEN}"
+    allowed_users:
+      - 1090997585063460935  # Binh Nguyen
+```
+
+Now when I text from Discord, Hermes responds in seconds — no SSH required.
+
+## The Portfolio Connection
+
+Here's where it gets interesting. My portfolio is a Next.js site on Vercel. When Hermes needs to make updates (like the recent TypeScript migration), it can:
+
+1. **Clone the repo** and make edits locally
+2. **Run build checks** (`npm run build`) to verify changes
+3. **Open PRs** via GitHub CLI
+4. **Report back** via Discord with a link to the PR
+
+### Real Example: The Aida Project Update
+
+Last week, I needed to add a new project entry for **Aida AI Website Builder** (the AI platform I worked on at group.one). Instead of:
+
+- Opening my laptop
+- Finding the project folder
+- Editing the code
+- Committing and pushing
+
+I just sent this to Hermes on Discord:
+
+> "Add Aida AI Website Builder to my portfolio /project route. It's a chat-to-website builder by group.one. Description: Aida is an AI-native business platform built specifically for European small businesses and start-ups."
+
+Hermes:
+1. Cloned the repo
+2. Created a new branch (`add-aida-project-entry`)
+3. Downloaded screenshots from one.com
+4. Added the project entry with proper typing
+5. Opened PR #3 on GitHub
+6. Messaged me on Discord with the link
+
+Total time: **3 minutes**. I didn't touch my laptop.
+
+## Skills & Automation
+
+One of Hermes's most powerful features is **skills** — reusable workflows that the agent remembers. Here's my current setup:
+
+| Skill | What it does |
+|---|---|
+| `hermes-agent` | Configure/maintain Hermes itself |
+| `github-pr-workflow` | Branch, commit, open PR, merge |
+| `opencode` | Delegate coding tasks to AI coding agents |
+| `plan` | Write implementation plans before coding |
+
+I also have scheduled cron jobs:
+- **Daily**: Check portfolio build status
+- **Weekly**: Pull latest changes from main to dev branches
+
+## The Development Workflow
+
+For day-to-day coding, I use a hybrid approach:
+
+1. **Complex/refactoring tasks** → Delegate to OpenCode via Hermes
+2. **Quick fixes** → SSH into the laptop, code directly
+3. **Reviews** → Hermes opens PRs, I review on GitHub
+4. **Monitoring** → Discord notifications for builds and deployments
+
+```bash
+# My typical flow:
+# 1. Think of a feature
+# 2. /plan it via Hermes (optional)
+# 3. Ask Hermes to implement it via OpenCode
+# 4. Review PR on GitHub
+# 5. Merge when green
+```
+
+## Results
+
+After 2 months of running Hermes, here's what changed:
+
+| Metric | Before | After |
+|---|---|---|
+| Portfolio updates | ~2 weeks delayed | < 1 hour |
+| PR review time | 3-4 days | Same day |
+| Access method | Laptop + SSH | Discord on phone |
+| Build verification | Manual check | Auto-reported |
+
+## What's Next
+
+I'm currently exploring:
+- **Voice interactions** via WhatsApp
+- **Automated documentation** — Hermes reads code and writes docs
+- **Multi-agent workflows** — spawning sub-agents for research + implementation
+
+The AI landscape is moving fast. Having a persistent, customizable agent that's *yours* — running on your hardware, connected to your platforms — is a game changer for solo developers.
+
+---
+
+*Portfolio powered by [Hermes Agent](https://hermes-agent.nousresearch.com/) + Next.js + Vercel. Laptop: MSI Bravo 17, Ubuntu 24.04.*
