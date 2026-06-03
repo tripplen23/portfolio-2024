@@ -18,7 +18,7 @@ import portfolio2024 from "@/images/projects/portfolio2024.png";
 import azeventmanagement from "@/images/projects/azeventmanagement.png";
 import bioGenerator from "@/images/projects/bio_generator.png";
 import thriveConnect from "@/images/projects/thriveConnect.png";
-import aidaProject from "@/images/projects/aida_preview.png";
+import aidaProject from "@/images/projects/aida_01_chat_build.png";
 import trammeoblog from "@/images/projects/trammeoblog.webp";
 
 // Trammeo Blog
