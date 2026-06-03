@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getBlogPost, getAllSlugs } from "@/lib/useBlogIndex";
+import { getBlogPost } from "@/lib/useBlogIndex";
 import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import TransitionEffect from "@/components/TransitionEffect";
@@ -22,20 +22,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 // Force dynamic rendering to avoid static generation issues with blog data
 export const dynamic = "force-dynamic";
-
-interface PageProps {
-  params: { slug: string };
-}
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  if (!params?.slug) return { title: "Blog | Binh Nguyen" };
-  const post = getBlogPost(params.slug);
-  if (!post) return { title: "Post Not Found" };
-  return {
-    title: post.title,
-    description: post.description,
-  };
-}
 
 export default function BlogPost({ params }: PageProps) {
   const slug = params?.slug;
