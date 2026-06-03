@@ -23,8 +23,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["AI", "Hermes", "Next.js", "DevOps"],
     category: "Hermes Handbook",
     readingTime: "10 min",
-    coverImage:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop",
+    coverImage: "/blog-featured.jpg",
     content: `<h2>Wednesday. Day 2.</h2>
 
 <p>No standups. No Slack pings at 9 AM. Just me, my laptop, and a portfolio so outdated even I was embarrassed to open it.</p>
