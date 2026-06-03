@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = getBlogPost(params.slug);
   if (!post) return { title: "Post Not Found" };
   return {
-    title: `${post.title} | Binh Nguyen`,
+    title: post.title,
     description: post.description,
   };
 }
