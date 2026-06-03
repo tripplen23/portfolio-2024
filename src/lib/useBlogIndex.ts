@@ -7,6 +7,7 @@ export interface BlogPost {
   description: string;
   date: string;
   tags: string[];
+  category?: string;
   readingTime?: string;
   coverImage?: string;
   content: string;
@@ -20,6 +21,7 @@ export const blogPosts: BlogPost[] = [
       "It was Wednesday. Day 2 of freelance — no standups, no Slack pings at 9 AM. Just me, my laptop, and a portfolio so outdated even I was embarrassed to open it. Then I met Hermes.",
     date: "2026-06-03",
     tags: ["AI", "Hermes", "Next.js", "DevOps"],
+    category: "Hermes Cẩm Nang",
     readingTime: "10 min",
     coverImage:
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop",
@@ -35,14 +37,7 @@ export const blogPosts: BlogPost[] = [
 <p><strong>Always online.</strong> Text it on Discord, it responds. Schedule a cron job, it runs. Perfect for a solo dev with zero willpower to maintain their own portfolio.</p>
 <h2>Setup</h2>
 <p>Architecture:</p>
-<pre><code>┌─────────────────────────────────────────────────────────┐
-│                    MY LAPTOP                             │
-│  ┌──────────────┐    ┌──────────────┐    ┌────────────┐ │
-│  │ Hermes Agent │───▶│ VPN Tunnel   │───▶│ Discord    │ │
-│  │ (Node.js)    │    │ (Zero-config)│   │ (DM me)    │ │
-│  └──────────────┘    └──────────────┘    └────────────┘ │
-└─────────────────────────────────────────────────────────┘
-</code></pre>
+<img src="/hermes-architecture.svg" alt="Hermes Architecture" class="w-full my-4 rounded-lg" style="background:#020617; padding:12px; border-radius:8px;" />
 <p><strong>1. Install Hermes</strong></p>
 <pre><code class="language-bash">npm install -g hermes-agent
 hermes setup
