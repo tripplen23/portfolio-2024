@@ -1,12 +1,20 @@
 "use client";;
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, type MotionProps } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
 const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-const getRandomInt = (max) => Math.floor(Math.random() * max);
+const getRandomInt = (max: number): number => Math.floor(Math.random() * max);
+
+interface HyperTextProps {
+  text: string;
+  duration?: number;
+  framerProps?: MotionProps;
+  className?: string;
+  animateOnLoad?: boolean;
+}
 
 export default function HyperText({
   text,
@@ -17,10 +25,9 @@ export default function HyperText({
     animate: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: 3 },
   },
-
   className,
-  animateOnLoad = true
-}) {
+  animateOnLoad = true,
+}: HyperTextProps) {
   const [displayText, setDisplayText] = useState(text.split(""));
   const [trigger, setTrigger] = useState(false);
   const interations = useRef(0);

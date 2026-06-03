@@ -3,8 +3,24 @@ import { motion, useScroll } from "framer-motion";
 import LiIcon from "./LiIcon";
 import SparklesText from "@/components/magicui/sparkles-text";
 
-const Details = ({ position, company, companyLink, time, address, work }) => {
-  const ref = useRef(null);
+interface ExperienceItemProps {
+  position: string;
+  company: string;
+  companyLink: string;
+  time: string;
+  address: string;
+  work: string;
+}
+
+const Details: React.FC<ExperienceItemProps> = ({
+  position,
+  company,
+  companyLink,
+  time,
+  address,
+  work,
+}) => {
+  const ref = useRef<HTMLLIElement | null>(null);
   return (
     <li
       ref={ref}
@@ -35,8 +51,8 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
   );
 };
 
-const Experience = () => {
-  const ref = useRef(null);
+const Experience: React.FC = () => {
+  const ref = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "center start"],

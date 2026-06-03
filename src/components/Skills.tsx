@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import SparklesText from "@/components/magicui/sparkles-text";
 import IconCloud from "@/components/magicui/icon-cloud";
 
-const slugs = [
+const slugs: string[] = [
   "typescript",
   "javascript",
   "python",
@@ -36,7 +36,13 @@ const slugs = [
   "figma",
 ];
 
-const Skill = ({ name, postionX, postionY }) => {
+interface SkillProps {
+  name: string;
+  postionX: number | string;
+  postionY: number | string;
+}
+
+const Skill: React.FC<SkillProps> = ({ name, postionX, postionY }) => {
   return (
     <motion.div
       className="flex items-center justify-center rounded-full font-semibold bg-dark text-light py-3 px-6 shadow-dark cursor-pointer absolute dark:text-dark dark:bg-light lg:py-2 lg:px-4 md:text-sm md:py-1.5 md:px-3 xs:bg-transparent xs:dark:bg-transparent xs:text-light xs:dark:text-dark xs:font-bold"
@@ -50,7 +56,7 @@ const Skill = ({ name, postionX, postionY }) => {
   );
 };
 
-const Skills = () => {
+const Skills: React.FC = () => {
   return (
     <>
       <SparklesText

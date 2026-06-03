@@ -12,21 +12,33 @@ import {
 
 import { cn } from "@/lib/utils";
 
-export const wrap = (min, max, v) => {
+export const wrap = (min: number, max: number, v: number): number => {
   const rangeSize = max - min;
   return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
 };
 
+export interface VelocityScrollProps {
+  text: string;
+  default_velocity?: number;
+  className?: string;
+}
+
+interface ParallaxTextProps {
+  children: React.ReactNode;
+  baseVelocity?: number;
+  className?: string;
+}
+
 export function VelocityScroll({
   text,
   default_velocity = 5,
-  className
-}) {
+  className,
+}: VelocityScrollProps) {
   function ParallaxText({
     children,
     baseVelocity = 100,
-    className
-  }) {
+    className,
+  }: ParallaxTextProps) {
     const baseX = useMotionValue(0);
     const { scrollY } = useScroll();
     const scrollVelocity = useVelocity(scrollY);
@@ -40,8 +52,8 @@ export function VelocityScroll({
     });
 
     const [repetitions, setRepetitions] = useState(1);
-    const containerRef = useRef(null);
-    const textRef = useRef(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const textRef = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
       const calculateRepetitions = () => {

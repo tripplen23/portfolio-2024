@@ -6,7 +6,17 @@ import { GithubIcon, LinkedInIcon, SunIcon, MoonIcon } from "./Icons";
 import { motion } from "framer-motion";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
 
-const CustomLink = ({ href, title, className = "" }) => {
+interface NavLinkProps {
+  href: string;
+  title: string;
+  className?: string;
+}
+
+interface MobileNavLinkProps extends NavLinkProps {
+  toggle: () => void;
+}
+
+const CustomLink: React.FC<NavLinkProps> = ({ href, title, className = "" }) => {
   const router = useRouter();
 
   return (
@@ -23,7 +33,12 @@ const CustomLink = ({ href, title, className = "" }) => {
   );
 };
 
-const CustomMobileLink = ({ href, title, className = "", toggle }) => {
+const CustomMobileLink: React.FC<MobileNavLinkProps> = ({
+  href,
+  title,
+  className = "",
+  toggle,
+}) => {
   const router = useRouter();
 
   const handleClick = () => {
@@ -33,7 +48,6 @@ const CustomMobileLink = ({ href, title, className = "", toggle }) => {
 
   return (
     <button
-      href={href}
       className={`${className} relative group text-light dark:text-dark my-2`}
       onClick={handleClick}
     >
@@ -49,7 +63,7 @@ const CustomMobileLink = ({ href, title, className = "", toggle }) => {
   );
 };
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const [mode, setMode] = useThemeSwitcher();
   const [isOpen, setIsOpen] = useState(false);
 
