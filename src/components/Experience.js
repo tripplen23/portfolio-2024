@@ -94,6 +94,22 @@ const Experience = () => {
             address="Helsinki, Finland"
             work="Develop and Implement the orchestration of AI Agents product for data management platform."
           />
+          <Details
+            position="AI Backend Developer"
+            company="Zoner Oy"
+            time="December 2025 - July 2026"
+            companyLink="https://www.zoner.fi/"
+            address="Helsinki, Finland"
+            work="AI Backend Developer contributing to the development of AI-driven solutions."
+          />
+          <Details
+            position="AI Backend Developer"
+            company="group.one"
+            time="December 2025 - July 2026"
+            companyLink="https://www.group.one/"
+            address="Helsinki, Finland"
+            work="Contributed to building AIDA - an AI Agent platform that enables SMBs to create websites and ecommerce solutions."
+          />
         </ul>
       </div>
     </div>
