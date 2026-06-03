@@ -87,6 +87,22 @@ const Experience = () => {
             work="Develop the AI Integrated Para legal for software legal platform.Integrated Generative AI to project for optimizing the data checking by Natural Language."
           />
           <Details
+            position="AI Backend Developer"
+            company="Zoner Oy"
+            time="December 2025 - July 2026"
+            companyLink="https://www.zoner.fi/"
+            address="Helsinki, Finland"
+            work="AI Backend Developer contributing to the development of AI-driven solutions."
+          />
+          <Details
+            position="AI Backend Developer"
+            company="group.one"
+            time="December 2025 - July 2026"
+            companyLink="https://www.group.one/"
+            address="Helsinki, Finland"
+            work="Contributed to building AIDA - an AI Agent platform that enables SMBs to create websites and ecommerce solutions using AI automation."
+          />
+          <Details
             position="AI Software Developer"
             company="Rubberduck AI OY"
             time="February 2025 - Present"
