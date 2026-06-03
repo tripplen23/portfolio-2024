@@ -14,10 +14,12 @@ export default defineConfig({
         coverImage: s.string().optional(),
         draft: s.boolean().optional().default(false),
         content: s.markdown(),
-      }).transform((post) => {
+      }),
+      // @ts-ignore - $path injected by velite at build time
+      transform: (post: { $path: string; [key: string]: unknown }) => {
         const slug = post.$path.replace("blog/", "").replace(".mdx", "");
         return { ...post, slug };
-      }),
+      },
     },
   },
 });
