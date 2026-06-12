@@ -50,28 +50,6 @@ npm run dev
 # 5. Open http://localhost:3000
 ```
 
-## Project Structure
-
-```
-portfolio-2024/
-├── public/
-│   └── cv.pdf              # Resume file (linked from homepage)
-├── src/
-│   ├── components/         # Reusable UI components
-│   │   ├── Experience.tsx  # Work history timeline
-│   │   ├── Layout.tsx      # Page layout wrapper
-│   │   └── ...
-│   ├── pages/              # Next.js pages (file-based routing)
-│   │   ├── index.tsx      # Homepage
-│   │   └── about.tsx      # About page
-│   └── styles/
-│       └── globals.css     # Global styles + Tailwind
-├── content/               # Blog posts (MDX)
-├── next.config.js
-├── tailwind.config.js
-└── package.json
-```
-
 ## Features
 
 - **Homepage** — intro, CTA buttons (Resume + Contact), tech stack overview
