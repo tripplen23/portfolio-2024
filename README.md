@@ -13,11 +13,13 @@ Welcome to my Portfolio 2024 repository. This project showcases my skills, proje
 
 ## Table of Contents
 
-- [Features](#features)
-- [File/Folder Structure](#filefolder-structure)
-- [Installation](#installation)
-- [User Interface](#user-interface)
-- [Contributing](#contributing)
+- [Nguyen Duc Binh Portfolio 2024](#nguyen-duc-binh-portfolio-2024)
+  - [Project Description](#project-description)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+  - [Contributing](#contributing)
 
 ## Features
 
@@ -27,70 +29,6 @@ Welcome to my Portfolio 2024 repository. This project showcases my skills, proje
 - Certificates section showcasing technical skills and proficiencies.
 - Responsive design for seamless viewing on any device.
 - Dark mode for enhancing User Friendly and User Accessibility Content.
-
-## File/Folder Structure
-
-```sh
-portfolio-2024/
-│
-├── public/
-│ ├── All-Texts/
-│ │ ├── Icons.txt
-│ │ └── styles.txt
-│ ├── cv.pdf
-│ ├── Diploma2001352.pdf
-│ ├── icon.jpg
-│ ├── InternAssessmentResult.pdf
-│ ├── next.svg
-│ ├── thirteen.svg
-│ └── vercel.svg
-│
-├── src/
-│ ├── components/
-│ │ ├── hooks/
-│ │ │ └── useThemeSwitcher.js
-│ │ ├── AnimatedText.js
-│ │ ├── Education.js
-│ │ ├── Experience.js
-│ │ ├── Footer.js
-│ │ ├── GoToTopComponent.js
-│ │ ├── HireMe.js
-│ │ ├── Icons.js
-│ │ ├── Layout.js
-│ │ ├── LiIcon.js
-│ │ ├── Logo.js
-│ │ ├── Navbar.js
-│ │ ├── Skills.js
-│ │ └── TransitionEffect.js
-│ ├── images/
-│ │ ├── certificates/
-│ │ ├── profile/
-│ │ ├── projects/
-│ │ ├── svgs/
-│ │ └── circular-text.png
-│ ├── pages/
-│ │ ├── api/
-│ │ ├── _app.js
-│ │ ├── _document.js
-│ │ ├── about.js
-│ │ ├── certificate.js
-│ │ ├── index.js
-│ │ └── project.js
-│ └── styles/
-│   ├── globals.css
-│   └── Home.module.css
-│
-├── .eslintrc.json
-├── .gitignore
-├── .hintrc
-├── jsconfig.json
-├── next.config.js
-├── package-lock.json
-├── package.json
-├── postcss.config.js
-├── README.md
-└── tailwind.config.js
-```
 
 ## Installation
 
@@ -129,26 +67,6 @@ Node version 21.0.0
    ```
 
 5. Open your browser and go to http://localhost:3000 to view the portfolio.
-
-## User Interface
-
-### Home page
-
-![home](image/README/HomePage.png)
-
-### About page
-
-![biography](image/README/Biography.png)
-![skill](image/README/Skill.png)
-![background](image/README/Background.png)
-
-### Project Page
-
-![project](image/README/Project.png)
-
-### Certificate Page
-
-![certificate](image/README/Certificate.png)
 
 ## Contributing
 
