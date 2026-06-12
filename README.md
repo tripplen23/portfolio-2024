@@ -1,73 +1,118 @@
-# Nguyen Duc Binh Portfolio 2024
+# Nguyen Duc Binh — Portfolio 2024
 
-![Next](https://img.shields.io/badge/Next-v.13.5.1-black)
-![React](https://img.shields.io/badge/React-v.18.2.0-blue)
-![Node](https://img.shields.io/badge/Node-v.19.2.0-green)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v.3.4.1-lightblue)
-![FramerMotion](https://img.shields.io/badge/FramerMotion-v.10.6.0-pink)
+A personal portfolio showcasing skills, projects, and experience as a software developer.
 
-## Project Description
+**Live:** [nguyenducbinh.vercel.app](https://nguyenducbinh.vercel.app/)
 
-Welcome to my Portfolio 2024 repository. This project showcases my skills, projects, and experiences as a developer. The portfolio is built using modern web technologies to ensure a responsive and engaging user experience.
-**Link to deployed Frontend Web UI:** [Frontend](https://nguyenducbinh.vercel.app/)
+## Tech Stack
 
-## Table of Contents
+| Library | Version |
+|---------|---------|
+| Next.js | 13.5.1 |
+| React | 18.2.0 |
+| Tailwind CSS | 3.4.1 |
+| Framer Motion | 9.0.0 |
+| TypeScript | 5.6.2 |
 
-- [Nguyen Duc Binh Portfolio 2024](#nguyen-duc-binh-portfolio-2024)
-  - [Project Description](#project-description)
-  - [Table of Contents](#table-of-contents)
-  - [Features](#features)
-  - [Installation](#installation)
-    - [Prerequisites](#prerequisites)
-  - [Contributing](#contributing)
+## Prerequisites
+
+- **Node.js** ≥ 18.17 (recommended: use [nvm](https://github.com/nvm-sh/nvm))
+- **pnpm** ≥ 9 (or npm ≥ 9)
+
+Install pnpm if you haven't:
+
+```sh
+npm install -g pnpm
+```
+
+## Setup
+
+```sh
+# 1. Clone the repository
+git clone https://github.com/tripplen23/portfolio-2024.git
+cd portfolio-2024
+
+# 2. Install dependencies
+pnpm install
+# or
+npm install
+
+# 3. Build the project (required before dev — generates static assets)
+pnpm build
+# or
+npm run build
+
+# 4. Start the development server
+pnpm dev
+# or
+npm run dev
+
+# 5. Open http://localhost:3000
+```
+
+## Project Structure
+
+```
+portfolio-2024/
+├── public/
+│   └── cv.pdf              # Resume file (linked from homepage)
+├── src/
+│   ├── components/         # Reusable UI components
+│   │   ├── Experience.tsx  # Work history timeline
+│   │   ├── Layout.tsx      # Page layout wrapper
+│   │   └── ...
+│   ├── pages/              # Next.js pages (file-based routing)
+│   │   ├── index.tsx      # Homepage
+│   │   └── about.tsx      # About page
+│   └── styles/
+│       └── globals.css     # Global styles + Tailwind
+├── content/               # Blog posts (MDX)
+├── next.config.js
+├── tailwind.config.js
+└── package.json
+```
 
 ## Features
 
-- Home page with an introduction and overview.
-- About section detailing personal and professional background.
-- Projects section highlighting key projects with descriptions and links.
-- Certificates section showcasing technical skills and proficiencies.
-- Responsive design for seamless viewing on any device.
-- Dark mode for enhancing User Friendly and User Accessibility Content.
+- **Homepage** — intro, CTA buttons (Resume + Contact), tech stack overview
+- **About page** — detailed background, experience timeline, skills, education
+- **Blog** — MDX-powered posts with syntax highlighting
+- **Dark mode** — system preference + manual toggle
+- **Responsive** — mobile-first, works on all screen sizes
+- **Framer Motion** — scroll animations and page transitions
 
-## Installation
+## Deployment
 
-### Prerequisites
+Automatically deployed via [Vercel](https://vercel.com/) on push to `main`.
 
-Node version 21.0.0
+Preview deployments run for every pull request.
 
-1. Open your terminal and clone the repository with the following command:
+## Scripts
 
-   ```sh
-   git clone https://github.com/tripplen23/portfolio-2024.git
+| Command | Description |
+|---------|-------------|
+| `pnpm dev` | Start dev server with hot reload |
+| `pnpm build` | Production build |
+| `pnpm start` | Run production server (after build) |
+| `pnpm lint` | Run ESLint |
 
-   ```
+## Customising
 
-2. Navigate to the project directory:
+### Update Resume
 
-   ```sh
-   cd portfolio-2024
+Replace `public/cv.pdf` with your own file. The filename must stay as `cv.pdf`.
 
-   ```
+### Add Blog Posts
 
-3. Install all the packages:
+Add `.mdx` files to the `content/` directory. See existing posts for frontmatter format.
 
-   ```sh
-    npm install
-    # or
-    yarn
-   ```
+### Experience Timeline
 
-4. Start the application in your local machine development environment:
-
-   ```sh
-    npm dev
-    # or
-    yarn dev
-   ```
-
-5. Open your browser and go to http://localhost:3000 to view the portfolio.
+Edit `src/components/Experience.tsx` — each entry is a `<Details />` component with position, company, time range, address, and description.
 
 ## Contributing
 
-Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
+1. Create a feature branch: `git checkout -b feature/your-feature`
+2. Commit your changes with a clear message
+3. Open a pull request against `main`
+4. Do not push directly to `main`
