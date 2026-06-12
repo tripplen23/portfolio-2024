@@ -1,21 +1,30 @@
-import type { Metadata } from "next";
-import { getBlogPosts } from "@/lib/useBlogIndex";
+import type { GetStaticProps } from "next";
+import Head from "next/head";
+import { getPostMetas, type PostMeta } from "@/lib/blog";
 import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import Link from "next/link";
 import Image from "next/image";
 import TransitionEffect from "@/components/TransitionEffect";
 
-export const metadata: Metadata = {
-  title: "Binh Nguyen | Blog",
-  description: "Thoughts on AI, DevOps, and building with code.",
+interface BlogIndexProps {
+  posts: PostMeta[];
+}
+
+export const getStaticProps: GetStaticProps<BlogIndexProps> = async () => {
+  return { props: { posts: getPostMetas() } };
 };
 
-export default function BlogIndex() {
-  const posts = getBlogPosts();
-
+export default function BlogIndex({ posts }: BlogIndexProps) {
   return (
     <>
+      <Head>
+        <title>Binh Nguyen | Blog</title>
+        <meta
+          name="description"
+          content="Thoughts on AI, DevOps, and building with code."
+        />
+      </Head>
       <main className="flex w-full flex-col items-center dark:text-light">
         <Layout className="pt-16">
           <AnimatedText

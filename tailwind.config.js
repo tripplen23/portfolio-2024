@@ -9,6 +9,63 @@ module.exports = {
       fontFamily: {
         mono: ["var(--font-mono)"],
       },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            "--tw-prose-body": "#1b1b1b",
+            "--tw-prose-headings": "#1b1b1b",
+            "--tw-prose-links": "#B63E96",
+            "--tw-prose-bold": "#1b1b1b",
+            "--tw-prose-quotes": "#1b1b1b",
+            "--tw-prose-quote-borders": "#B63E96",
+            "--tw-prose-code": "#1b1b1b",
+            "--tw-prose-th-borders": "rgba(27,27,27,0.4)",
+            "--tw-prose-td-borders": "rgba(27,27,27,0.15)",
+            // Dark mode (prose-invert) overrides
+            "--tw-prose-invert-body": "#f5f5f5",
+            "--tw-prose-invert-headings": "#f5f5f5",
+            "--tw-prose-invert-links": "#58E6D9",
+            "--tw-prose-invert-bold": "#f5f5f5",
+            "--tw-prose-invert-quotes": "#f5f5f5",
+            "--tw-prose-invert-quote-borders": "#58E6D9",
+            "--tw-prose-invert-code": "#f5f5f5",
+            "--tw-prose-invert-th-borders": "rgba(245,245,245,0.4)",
+            "--tw-prose-invert-td-borders": "rgba(245,245,245,0.15)",
+            maxWidth: "none",
+            a: {
+              fontWeight: "600",
+              textDecoration: "underline",
+              textUnderlineOffset: "3px",
+            },
+            // Inline code only (fenced blocks are handled by rehype-pretty-code)
+            "code:not(pre code)": {
+              backgroundColor: "rgba(27,27,27,0.08)",
+              padding: "0.15em 0.4em",
+              borderRadius: "0.3rem",
+              fontWeight: "500",
+            },
+            "code:not(pre code)::before": { content: '""' },
+            "code:not(pre code)::after": { content: '""' },
+            // Tables get clear separation
+            thead: {
+              borderBottomWidth: "2px",
+            },
+            "thead th": {
+              fontWeight: "700",
+            },
+            "tbody tr": {
+              borderBottomWidth: "1px",
+            },
+          },
+        },
+        invert: {
+          css: {
+            "code:not(pre code)": {
+              backgroundColor: "rgba(245,245,245,0.1)",
+            },
+          },
+        },
+      }),
     },
     screens: {
       "2xl": { max: "1535px" },
@@ -58,5 +115,5 @@ module.exports = {
         "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,#1b1b1b 4px,#1b1b1b 40px)",
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

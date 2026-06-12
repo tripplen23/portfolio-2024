@@ -1,15 +1,15 @@
 ---
-title: "Freelance Day 2: I Was Bored, My Portfolio Was Dusty, Then Hermes Happened"
-description: "It was Monday. The second day of my freelance life — no boss, no standup meetings, no company Slack pinging me at 9 AM. Just me, my laptop, and a portfolio so outdated even I was embarrassed to open it. Then I met Hermes."
+title: "I Was Bored, My Portfolio Was Dusty, Then Hermes Happened"
+description: "It was Monday — Slow morning, no boss, no standup meetings, no company Slack pinging me at 9 AM. Just me, my laptop, and a portfolio so outdated even I was embarrassed to open it. Then I met Hermes."
 date: "2026-06-03"
 tags: ["AI", "Hermes", "Next.js", "DevOps"]
 readingTime: "10 min"
-coverImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop"
+coverImage: "/blog-featured-1.jpg"
 ---
 
 ## Monday. Freelance Day 2. The Hustle Is Real (Not).
 
-So here I am. **Day 2 of being my own boss.** No more commuting, no more "quick syncs", no more explaining to HR why I'm wearing a hoodie to the meeting. Freedom! Excitement! ...And absolutely nothing to do because the project hasn't started yet.
+So here I am. **Day 2 of being my own boss.** No more commuting, no more "quick syncs". Freedom! Excitement! ...And absolutely nothing to do because the project hasn't started yet.
 
 I opened my portfolio. The same portfolio I built two years ago and basically abandoned like a tamagotchi with a dead battery. The "Get in Touch" button led to an email that no longer exists. The projects section had a screenshot of a to-do app I built in a weekend. The tech stack? React with class components. *Class components.* I felt old just looking at it.
 
@@ -28,7 +28,7 @@ Let me put it this way: imagine if you had a coworker who:
 - Never complains about overtime
 - Does exactly what you tell it (most of the time)
 - Lives rent-free on your laptop
-- Willing to work on weekends without extra pay
+- Smarter everyday
 
 That's Hermes. It's an open-source AI agent that runs locally on your machine, connects to your messaging platforms (Discord, WhatsApp, Telegram), and can execute tasks — coding, git operations, file editing, web research, you name it.
 
@@ -40,23 +40,7 @@ For a solo developer with zero willpower to maintain their own portfolio? This w
 
 Here's the architecture I ended up with:
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    MY LAPTOP                             │
-│                                                          │
-│  ┌──────────────┐    ┌──────────────┐    ┌────────────┐ │
-│  │ Hermes Agent │───▶│ VPN Tunnel   │───▶│ Discord    │ │
-│  │ (Node.js)    │    │ (Zero-config)│   │ (DM me)    │ │
-│  └──────────────┘    └──────────────┘    └────────────┘ │
-│         │                                        ▲      │
-│         ▼                                        │      │
-│  ┌──────────────┐                           ┌────────┐ │
-│  │ Portfolio    │                           │ Phone  │ │
-│  │ (Next.js)    │                           │ (Me)   │ │
-│  │ (Dusty)      │                           └────────┘ │
-│  └──────────────┘                                     │
-└─────────────────────────────────────────────────────────┘
-```
+<HermesArchitecture />
 
 ### Step 1: Install Hermes
 
@@ -65,7 +49,7 @@ npm install -g hermes-agent
 hermes setup
 ```
 
-The setup asks you to pick an LLM provider. I chose **OpenCode Go** with **Qwen3.7-max** — runs locally, no data leaves my machine, and it's fast enough for my nonsense prompts. You can also chain fallback models, so if one model is down, it automatically switches to the next. Very thoughtful, unlike my backup alarm which has never gone off once in my life.
+The setup asks you to pick an LLM provider. I chose the $5/month affordable **OpenCode Go** subscription with **MiniMax M2.7** — runs locally, no data leaves my machine, and it's fast enough for my nonsense prompts. You can also chain fallback models, so if one model is down, it automatically switches to the next. Very thoughtful, unlike my backup alarm which has never gone off once in my life.
 
 ### Step 2: Set Up VPN Access
 
@@ -172,4 +156,4 @@ The AI landscape is moving fast. Having a persistent, customizable agent that ru
 
 *Portfolio powered by [Hermes Agent](https://hermes-agent.nousresearch.com/) + Next.js + Vercel.*
 
-*P.S. — If you see this blog post, it means Hermes works. And I'm still unemployed, but at least my portfolio is up to date.*
+*P.S. — If you see this blog post, it means Hermes works. And I'm still looking for opportunity to collab on any dope AI/ML projects, but at least my portfolio is up to date.*
