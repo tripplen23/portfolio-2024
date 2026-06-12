@@ -215,6 +215,16 @@ const ProjectPage = () => {
           <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
             <div className="col-span-12">
               <FeaturedProject
+                type="AI Product · group.one"
+                title="Aida AI Website Builder — One Chat. Real Customers. Real Business."
+                summary="Aida is an AI-native business platform built specifically for European small businesses and start-ups — one of the first AI-native platforms of its kind. I contributed as an AI Backend Developer, building the AI agent orchestration that powers the chat-to-website experience: from prompt parsing and agent routing to content generation and multi-step task automation. The platform integrates an online shop, booking system, blog, professional email, and European hosting — all managed through a conversational AI interface."
+                img={aidaProject}
+                link={linkProject11}
+                github={githubProject11}
+              />
+            </div>
+            <div className="col-span-12">
+              <FeaturedProject
                 type="Trammeo."
                 title="Trammeo. The Blog"
                 summary="A project built by GSAP, CMS Sanity, NextJS for art purpose in collaboration with artist Trammeo."
@@ -307,16 +317,6 @@ const ProjectPage = () => {
                 img={thriveConnect}
                 link={linkProject10}
                 github={githubProject10}
-              />
-            </div>
-            <div className="col-span-12">
-              <FeaturedProject
-                type="AI Product · group.one"
-                title="Aida AI Website Builder — One Chat. Real Customers. Real Business."
-                summary="Aida is an AI-native business platform built specifically for European small businesses and start-ups — one of the first AI-native platforms of its kind. I contributed as an AI Backend Developer, building the AI agent orchestration that powers the chat-to-website experience: from prompt parsing and agent routing to content generation and multi-step task automation. The platform integrates an online shop, booking system, blog, professional email, and European hosting — all managed through a conversational AI interface."
-                img={aidaProject}
-                link={linkProject11}
-                github={githubProject11}
               />
             </div>
           </div>
