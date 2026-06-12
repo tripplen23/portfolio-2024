@@ -125,7 +125,7 @@ export default function BlogPost({ meta, source }: PageProps) {
           )}
 
           {/* MDX Content */}
-          <article className="prose prose-lg mx-auto w-full max-w-3xl px-4 dark:prose-invert">
+          <article className="prose prose-lg mx-auto w-full max-w-3xl rounded-2xl border border-dashed border-primaryDark/40 bg-dark/5 px-8 py-8 dark:prose-invert dark:bg-light/5 md:px-12">
             <MDXRemote {...source} components={mdxComponents} />
           </article>
 

@@ -24,10 +24,10 @@ module.exports = {
             // Dark mode (prose-invert) overrides
             "--tw-prose-invert-body": "#f5f5f5",
             "--tw-prose-invert-headings": "#f5f5f5",
-            "--tw-prose-invert-links": "#58E6D9",
+            "--tw-prose-invert-links": "#E68058",
             "--tw-prose-invert-bold": "#f5f5f5",
             "--tw-prose-invert-quotes": "#f5f5f5",
-            "--tw-prose-invert-quote-borders": "#58E6D9",
+            "--tw-prose-invert-quote-borders": "#E68058",
             "--tw-prose-invert-code": "#f5f5f5",
             "--tw-prose-invert-th-borders": "rgba(245,245,245,0.4)",
             "--tw-prose-invert-td-borders": "rgba(245,245,245,0.15)",
