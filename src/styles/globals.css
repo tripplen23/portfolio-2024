@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ------------------------------------------------------------------ */
+/* Blog: fenced code blocks rendered by rehype-pretty-code (Shiki).    */
+/* These sit inside `.prose`, so we override prose's default <pre>.    */
+/* ------------------------------------------------------------------ */
+@layer components {
+  .prose [data-rehype-pretty-code-figure] {
+    @apply my-6;
+  }
+
+  /* The highlighted <pre> carries an inline background from the Shiki theme.
+     keepBackground:true means we let that show, but normalise spacing. */
+  .prose pre {
+    @apply overflow-x-auto rounded-xl border border-dark/20 p-4 text-sm leading-relaxed dark:border-light/20;
+  }
+
+  .prose pre code {
+    @apply grid; /* one row per line, enables full-width line highlighting */
+    background-color: transparent !important;
+    padding: 0;
+    font-size: inherit;
+    counter-reset: line;
+  }
+
+  .prose pre code > [data-line] {
+    @apply px-1;
+  }
+
+  /* Optional code-block title from ```ts title="file.ts" */
+  .prose [data-rehype-pretty-code-title] {
+    @apply rounded-t-xl border border-b-0 border-dark/20 bg-dark/5 px-4 py-2 text-xs font-semibold dark:border-light/20 dark:bg-light/10;
+  }
+
+  .prose [data-rehype-pretty-code-title] + pre {
+    @apply mt-0 rounded-t-none;
+  }
+
+  /* In-article images / diagrams */
+  .prose img {
+    @apply mx-auto rounded-xl border border-dark/15 dark:border-light/15;
+  }
+}
