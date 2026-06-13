@@ -28,7 +28,7 @@ export default function BlogIndex({ posts }: BlogIndexProps) {
       <main className="flex w-full flex-col items-center dark:text-light">
         <Layout className="pt-16">
           <AnimatedText
-            text="Words & Ideas"
+            text="Words & thoughts"
             className="mb-16 !text-6xl lg:!text-8xl sm:!text-6xl xs:!text-4xl"
           />
           {posts.length === 0 ? (
