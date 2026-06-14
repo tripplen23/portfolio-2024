@@ -6,6 +6,7 @@ import Layout from "@/components/Layout";
 import Link from "next/link";
 import Image from "next/image";
 import TransitionEffect from "@/components/TransitionEffect";
+import GoToTopComponent from "@/components/GoToTopComponent";
 
 interface BlogIndexProps {
   posts: PostMeta[];
@@ -84,6 +85,7 @@ export default function BlogIndex({ posts }: BlogIndexProps) {
               ))}
             </div>
           )}
+          <GoToTopComponent />
         </Layout>
       </main>
       <TransitionEffect />

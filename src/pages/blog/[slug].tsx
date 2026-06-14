@@ -11,6 +11,7 @@ import remarkGfm from "remark-gfm";
 import { getPostSlugs, getPostSource, type PostMeta } from "@/lib/blog";
 import Layout from "@/components/Layout";
 import TransitionEffect from "@/components/TransitionEffect";
+import GoToTopComponent from "@/components/GoToTopComponent";
 import { mdxComponents } from "@/components/MDXComponents";
 
 interface PageProps {
@@ -138,6 +139,7 @@ export default function BlogPost({ meta, source }: PageProps) {
               ← Back to all posts
             </Link>
           </div>
+          <GoToTopComponent />
         </Layout>
       </main>
       <TransitionEffect />
