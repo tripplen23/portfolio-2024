@@ -1,10 +1,10 @@
 ---
 title: "Learning Rust in 2026: Setup, Mindset, and the Commands That Actually Matter"
-description: "Rust scared me for years. Memory safety without GC? Borrow checker? Ownership rules? This is how I finally cracked it — the Ubuntu setup, the VS Code config, and the commands I actually use every day."
-date: "2026-06-11"
+description: "Rust. Memory safety without GC? Borrow checker? Ownership rules? This is how I finally cracked it — the Ubuntu setup, the VS Code config, and the commands I actually use every day."
+date: "2026-06-14"
 tags: ["Rust", "Systems Programming", "Ubuntu", "Getting Started"]
 readingTime: "8 min"
-coverImage: "/blog-featured-2.jpg"
+coverImage: "/rust_feature.jpg"
 ---
 
 ## Why I Finally Learned Rust
@@ -27,11 +27,23 @@ Follow the prompts. Choose **default** toolchain. Restart your shell or run:
 source ~/.cargo/env
 ```
 
+You'll also need a C linker. On Ubuntu:
+
+```bash
+sudo apt install build-essential
+```
+
 Verify:
 
 ```bash
-rustc --version    # e.g. 1.85.0
-cargo --version    # e.g. 1.85.0
+rustc --version    # e.g. 1.96.0
+cargo --version    # e.g. 1.96.0
+```
+
+To update later:
+
+```bash
+rustup update
 ```
 
 ## 2. Your First Project
@@ -44,13 +56,14 @@ cargo run
 
 You should see `Hello, world!` in under 5 seconds. That's your sandbox — mess with it freely.
 
+Note: as of 2026, `cargo new` defaults to the **2024 edition** in `Cargo.toml`. That's the current stable edition — nothing to change.
+
 ## 3. VS Code Extensions You'll Actually Need
 
-Three extensions, no more:
+Two extensions, no more:
 
-- **rust-analyzer** — Real-time compiler errors, autocomplete, inline hints
+- **rust-analyzer** — Real-time compiler errors, autocomplete, inline hints, and built-in formatting (powered by `rustfmt`, which ships with Rust)
 - **CodeLLDB** — Debugger (better than trying to debug Rust with print statements)
-- **Prettier** — Format on save (Rust formatting is non-negotiable: `cargo fmt`)
 
 Enable format on save in VS Code settings:
 
