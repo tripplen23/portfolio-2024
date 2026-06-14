@@ -1,0 +1,232 @@
+---
+title: "Learning Rust in 2026: Setup, Mindset, and the Commands That Actually Matter"
+description: "Rust. Memory safety without GC? Borrow checker? Ownership rules? This is how I finally cracked it — the Ubuntu setup, the VS Code config, and the commands I actually use every day."
+date: "2026-06-14"
+tags: ["Rust", "Systems Programming", "Ubuntu", "Getting Started"]
+readingTime: "8 min"
+coverImage: "/rust_feature.jpeg"
+---
+
+## Why I Finally Learned Rust
+
+I've been curious about Rust for a while but never had a reason to start. Then a project needed a CLI tool with native performance and zero runtime dependencies. Rust fit perfectly.
+
+Three months later, the borrow checker went from "impossible" to "actually helpful." Here's everything I wish I had on day one.
+
+## 1. Install Rust on Ubuntu — The Right Way
+
+Don't use `apt install rustc`. It's usually outdated. Use `rustup`:
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+Follow the prompts. Choose **default** toolchain. Restart your shell or run:
+
+```bash
+source ~/.cargo/env
+```
+
+You'll also need a C linker. On Ubuntu:
+
+```bash
+sudo apt install build-essential
+```
+
+Verify:
+
+```bash
+rustc --version    # e.g. 1.96.0
+cargo --version    # e.g. 1.96.0
+```
+
+To update later:
+
+```bash
+rustup update
+```
+
+## 2. Your First Project
+
+```bash
+cargo new my_first_rust
+cd my_first_rust
+cargo run
+```
+
+You should see `Hello, world!` in under 5 seconds. That's your sandbox — mess with it freely.
+
+Note: as of 2026, `cargo new` defaults to the **2024 edition** in `Cargo.toml`. That's the current stable edition — nothing to change.
+
+## 3. VS Code Extensions You'll Actually Need
+
+Two extensions, no more:
+
+- **rust-analyzer** — Real-time compiler errors, autocomplete, inline hints, and built-in formatting (powered by `rustfmt`, which ships with Rust)
+- **CodeLLDB** — Debugger (better than trying to debug Rust with print statements)
+
+Enable format on save in VS Code settings:
+
+```json
+"[rust]": {
+  "editor.defaultFormatter": "rust-lang.rust-analyzer",
+  "editor.formatOnSave": true
+}
+```
+
+## 4. The Commands I Use Every Day
+
+### Build & Run
+
+```bash
+cargo build        # Compile (debug mode, fast)
+cargo build --release  # Compile (optimized, slow)
+
+cargo run           # Build + run in one shot
+cargo run --bin <name>  # Run a specific binary in a workspace
+```
+
+### Checking Without Building
+
+```bash
+cargo check         # Fastest — verify types/errors without generating binary
+cargo clippy        # Linter — catches common mistakes cargo check misses
+```
+
+This is the loop I use constantly: edit → `cargo check` → edit → `cargo run`.
+
+### Formatting & Testing
+
+```bash
+cargo fmt           # Format all code (run before every commit)
+cargo test          # Run all tests
+cargo test <name>   # Run a specific test by name
+cargo test -- --nocapture  # See print statements in tests
+```
+
+### Documentation
+
+```bash
+cargo doc --open    # Build docs and open in browser
+cargo doc --no-deps # Build docs for your crate only
+```
+
+### Dependencies
+
+```bash
+cargo add <crate>   # Add a dependency (e.g. cargo add serde)
+cargo add <crate> --dev  # Add as dev-dependency
+cargo update        # Update versions in Cargo.lock
+cargo tree          # Visualize dependency tree
+```
+
+## 5. Understanding the Borrow Checker (Finally)
+
+Here's the mental model that clicked for me:
+
+**Every value has exactly one owner.** When the owner goes out of scope, the value is dropped.
+
+```rust
+let s1 = String::from("hello");  // s1 owns the string
+let s2 = s1;                     // ownership MOVES to s2
+// println!("{}", s1);  // ERROR: s1 no longer valid
+println!("{}", s2);              // OK: s2 is the owner
+```
+
+**Borrowing** lets you use a value without taking ownership:
+
+```rust
+fn length(s: &String) -> usize { s.len() }
+
+let s = String::from("hello");
+let len = length(&s);  // Borrow s, don't take ownership
+println!("{} still valid", s);  // OK!
+```
+
+The borrow checker enforces:
+- Multiple **immutable** references (`&T`) — OK, any number
+- OR one **mutable** reference (`&mut T`) — but only one, and no immutable refs at the same time
+
+```rust
+let mut s = String::from("hello");
+
+let r1 = &s;      // OK
+let r2 = &s;      // OK — multiple immutable refs
+// let r3 = &mut s;  // ERROR: can't have mutable ref while immutable refs exist
+
+println!("{} and {}", r1, r2);
+// Now r1 and r2 are done using s, so:
+let r3 = &mut s;  // OK!
+r3.push_str(", world");
+```
+
+## 6. Common Patterns That Help
+
+### Pattern matching with `match`
+
+```rust
+let x = 3;
+
+match x {
+    1 => println!("one"),
+    2 => println!("two"),
+    _ => println!("something else"),
+}
+```
+
+### `if let` — less verbose than `match`
+
+```rust
+let Some(v) = maybe_value else { return; };
+// vs
+if let Some(v) = maybe_value {
+    println!("{}", v);
+}
+```
+
+### Error handling with `Result`
+
+```rust
+fn read_file(path: &str) -> Result<String, std::io::Error> {
+    std::fs::read_to_string(path)
+}
+
+match read_file("data.txt") {
+    Ok(content) => println!("File has {} bytes", content.len()),
+    Err(e) => eprintln!("Failed: {}", e),
+}
+```
+
+Or use the `?` operator for early return on error:
+
+```rust
+fn get_config() -> Result<String, std::io::Error> {
+    let content = std::fs::read_to_string("config.toml")?;
+    Ok(content)
+}
+```
+
+## 7. Where to Go After the Basics
+
+Once the compiler stops feeling like your enemy:
+
+```bash
+cargo install cargo-watch
+cargo watch -x check -x test -x fmt
+```
+
+This runs `check`, `test`, and `fmt` automatically every time you save a file. Game changer.
+
+Then start reading other people's code:
+
+```bash
+cargo search <keyword>   # Find crates
+```
+
+And bookmark [rustlings](https://github.com/rust-lang/rustlings) — interactive exercises that teach ownership by making you fix intentionally broken code.
+
+## The Bottom Line
+
+Rust has a real learning curve. The borrow checker will reject your code hundreds of times before it starts making sense. But once it clicks, you'll write safer code in every language — because you'll *understand* why memory bugs happen.
+
+Start with `cargo new`, run `cargo check` constantly, and don't try to understand lifetimes on day one. Save that for day thirty.
